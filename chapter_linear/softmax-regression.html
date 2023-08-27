@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Automatic Differentiation &#8212; Notes on Deep Learning</title>
+    <title>Softmax回归 &#8212; Notes on Deep Learning</title>
   
   
   
@@ -57,12 +57,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_prelimilaries/autograd';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_linear/softmax-regression';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="线性神经网络" href="../chapter_linear/0.html" />
-    <link rel="prev" title="Calculus" href="calculus.html" />
+    <link rel="prev" title="训练图像分类" href="training-pipeline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -136,15 +135,15 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_linear/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         线性神经网络
                       </a>
                     </li>
@@ -219,15 +218,15 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_linear/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         线性神经网络
                       </a>
                     </li>
@@ -301,19 +300,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">Prelimilaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Data Preprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculus.html">Calculus</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Automatic Differentiation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_prelimilaries/0.html">Prelimilaries</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/pandas.html">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/calculus.html">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/autograd.html">Automatic Differentiation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_linear/0.html">线性神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/linear-regression.html">线性回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/fashion-mnist.html">Fashion-MNIST数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/training-pipeline.html">训练图像分类</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/softmax-regression.html">Softmax回归</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">线性神经网络</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linear-regression.html">线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fashion-mnist.html">Fashion-MNIST数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="training-pipeline.html">训练图像分类</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Softmax回归</a></li>
 </ul>
 </li>
 </ul>
@@ -401,7 +400,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_prelimilaries/autograd.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_linear/softmax-regression.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -426,7 +425,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/chapter_prelimilaries/autograd.ipynb" target="_blank"
+      <li><a href="../_sources/chapter_linear/softmax-regression.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -469,7 +468,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Automatic Differentiation</h1>
+    <h1>Softmax回归</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -481,17 +480,12 @@ title="Print to PDF"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   一个简单的例子
+   定义模型
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   需要注意的点
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   禁用梯度跟踪
+   训练
   </a>
  </li>
 </ul>
@@ -503,179 +497,72 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section id="automatic-differentiation">
-<h1>Automatic Differentiation<a class="headerlink" href="#automatic-differentiation" title="Permalink to this headline">#</a></h1>
+  <section id="softmax">
+<h1>Softmax回归<a class="headerlink" href="#softmax" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>求导是几乎所有深度学习优化算法的关键步骤，我们可以使用PyTorch自动求导。</p>
+<p>本节用最简单的softmax回归（实际上就是单层神经网络）来实现图像分类，主要目的是为了跑通流程</p>
 </div>
 <section id="id1">
-<h2>一个简单的例子<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>考虑最简单的单层神经网络，输入是x，参数是w和b，并定义好损失函数：</p>
+<h2>定义模型<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p><img alt="jupyter" src="../_images/softmax.svg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># input tensor</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># expected output</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
-<span class="n">loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">binary_cross_entropy_with_logits</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>autograd记录上述数据和操作流，构成一个有向无环图（DAG）：</p>
-<p><img alt="image" src="../_images/comp-graph.png" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gradient function for z =&#39;</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gradient function for loss =&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gradient function for z = &lt;AddBackward0 object at 0x7fd51b73db80&gt;
-Gradient function for loss = &lt;BinaryCrossEntropyWithLogitsBackward0 object at 0x7fd51b6f04c0&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>反向传播会给出<code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code>的叶子节点的梯度</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">init_weights</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;initialize at random&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">:</span>
+        <span class="c1"># 赋值操作都带_</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+        
+
+<span class="c1"># softmax模型</span>
+<span class="c1"># fashion-mnist数据集每个样本的shape为(1, 28, 28)，所以需要先Flatten到1*28*28=784维</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="c1"># 循环各层调用init_weights</span>
+<span class="n">net</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">init_weights</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2274, 0.0553, 0.0321],
-        [0.2274, 0.0553, 0.0321],
-        [0.2274, 0.0553, 0.0321],
-        [0.2274, 0.0553, 0.0321],
-        [0.2274, 0.0553, 0.0321]])
-tensor([0.2274, 0.0553, 0.0321])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=10, bias=True)
+)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id2">
-<h2>需要注意的点<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>一个计算图只能反向传播一次，除非在反向传播时设置<code class="docutils literal notranslate"><span class="pre">retain_graph=True</span></code></p>
-</div>
-<p>比如说，现在执行以下操作会抛出异常</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<h2>训练<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">d2l</span>
+
+<span class="c1"># 1.获取数据</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">train_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">d2l</span><span class="o">.</span><span class="n">load_data_fashion_mnist</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pytorch会自动累计grad，除非手动清零</p>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">inp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 要进行多次backward需设置retain_graph=True</span>
-<span class="n">out</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">inp</span><span class="p">),</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">inp</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-
-<span class="c1"># 累计grad</span>
-<span class="n">out</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">inp</span><span class="p">),</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">inp</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-
-<span class="c1"># 清零grad</span>
-<span class="n">inp</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span>
-<span class="n">out</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">inp</span><span class="p">),</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">inp</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.训练，用上一节定义好的函数进行训练果然很方便~</span>
+<span class="n">lr</span><span class="p">,</span> <span class="n">num_epochs</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">train_image_classifier</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">test_iter</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[4., 2., 2.],
-        [2., 4., 2.],
-        [2., 2., 4.]])
-tensor([[8., 4., 4.],
-        [4., 8., 4.],
-        [4., 4., 8.]])
-tensor([[4., 2., 2.],
-        [2., 4., 2.],
-        [2., 2., 4.]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss 0.402, train acc 0.859650, test acc  0.810800
 </pre></div>
 </div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Pytorch使用动态DAG，即在每次<code class="docutils literal notranslate"><span class="pre">.backward()</span></code>后，都会重新生成DAG，这使得我们可以在模型中使用Python控制流。</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
-    <span class="k">while</span> <span class="n">b</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">b</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-<span class="n">a</span><span class="o">.</span><span class="n">grad</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(1024.)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id3">
-<h2>禁用梯度跟踪<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>有时，我们希望将某些计算移动到计算图之外，比如说：</p>
-<ol class="arabic simple">
-<li><p>finetune时</p></li>
-<li><p>预测时</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
-</div>
-<p>使用<code class="docutils literal notranslate"><span class="pre">.detach()</span></code>也可以达到同样的效果。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
-<span class="n">z_det</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z_det</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
+<img alt="../_images/b6d567032d542879f661a0dedf01b818941ebc70de4820d225c1f4ed4ba9f096.svg" src="../_images/b6d567032d542879f661a0dedf01b818941ebc70de4820d225c1f4ed4ba9f096.svg" /></div>
 </div>
 </section>
 </section>
@@ -693,7 +580,7 @@ False
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter_prelimilaries"
+            path: "./chapter_linear"
         },
         predefinedOutput: true
     }
@@ -708,19 +595,12 @@ False
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="calculus.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="training-pipeline.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Calculus</p>
+          <p class="prev-next-title">训练图像分类</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="../chapter_linear/0.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">线性神经网络</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -740,17 +620,12 @@ False
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   一个简单的例子
+   定义模型
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   需要注意的点
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   禁用梯度跟踪
+   训练
   </a>
  </li>
 </ul>
