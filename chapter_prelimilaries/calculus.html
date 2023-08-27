@@ -465,8 +465,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives-and-gradients">
-   Partial Derivatives and Gradients
+  <a class="reference internal nav-link" href="#partial-derivatives">
+   Partial Derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -476,11 +476,6 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   常见的求导结果
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
    矩阵求导
   </a>
  </li>
@@ -504,51 +499,46 @@ title="Print to PDF"
 <p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function $f:\mathbb{R}\to\mathbb{R}$</p>
 <p>$$f’(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$</p>
 <p>When $f’(x)$ exits, $f$ is said to be differentiable at $x$.</p>
+<p>Suppose that $y=f(g(x))$ and that the underlying functions $y=f(u)$ and $u=g(x)$ are both differentiable. The chain rule states that</p>
+<p>$$\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}.$$</p>
 </section>
-<section id="partial-derivatives-and-gradients">
-<h2>Partial Derivatives and Gradients<a class="headerlink" href="#partial-derivatives-and-gradients" title="Permalink to this headline">#</a></h2>
+<section id="partial-derivatives">
+<h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this headline">#</a></h2>
 <p>Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The partial derivative of $y$ with respect to $x_{i}$ is</p>
 <p>$$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$</p>
 <p>We can treat $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ as constants
 and calculate the derivative of $y$ with respect to $x_i$.</p>
-<p>We can concatenate partial derivatives of a multivariant function with respect to all its variables to obtain a vector that is called the gradient of the function. Suppose that the input of the function $f:\mathbb{R}^{n}\to\mathbb{R}$ is a $n-$dimensional vector $\mathbf{x}=[x_{1},x_{2},\ldots,x_{n}]^\top$ and the output is a scalar, the gradient is</p>
-<p>$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \left[\frac{\partial y}{\partial x_1}, \frac{\partial y}{\partial x_2}, \ldots
-\frac{\partial y}{\partial x_n})\right]^\top.$$</p>
 </section>
 <section id="id1">
 <h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>我们使用常用的分子布局符号。<br>
-标量关于<code class="docutils literal notranslate"><span class="pre">列向量</span></code>的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a75d731-b4aa-4513-a1ed-86e717d322a5">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0a75d731-b4aa-4513-a1ed-86e717d322a5" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-1 &amp; 2 &amp; 3\\
-a &amp; b &amp; c
-\end{bmatrix}\]</div>
-<p>$$</p>
-<p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}$$
-$$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
-\frac{\partial y}{\partial x_{1}}&amp; \frac{\partial y}{\partial x_{2}}&amp; \ldots  &amp;\frac{\partial y}{\partial x_{n}}
-\end{bmatrix}$$</p>
-<p><code class="docutils literal notranslate"><span class="pre">列向量</span></code>关于标量的导数是一个<code class="docutils literal notranslate"><span class="pre">列向量</span></code>：</p>
-<p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}$$</p>
-<p>$$\frac{\partial{\mathbf{y}}}{\partial{x}}=\begin{bmatrix}
+<p>我们使用常用的分子布局符号，即分子不变分母转置。<br>
+标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：</p>
+<p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}
+\quad
+\frac{\partial{y}}{\partial\mathbf{x}}=\left[
+\frac{\partial y}{\partial x_{1}}, \frac{\partial y}{\partial x_{2}}, \ldots  ,\frac{\partial y}{\partial x_{n}}
+\right]$$
+$$\frac{\partial \text{sum}(\mathbf{x})}{\partial \mathbf{x}} = \mathbf{1}^{T}$$
+$$\frac{\partial \left | \mathbf{x} \right | ^{2}}{\partial \mathbf{x}} = 2\mathbf{x}^{T}$$</p>
+<p>向量（列）关于标量的导数是一个列向量：</p>
+<p>$$\mathbf{y} = \begin{bmatrix} y_{1} \ y_{2} \ \vdots \ y_{m} \end{bmatrix}
+\quad
+\frac{\partial{\mathbf{y}}}{\partial{x}}=\begin{bmatrix}
 \frac{\partial y_{1}}{\partial x}\ \frac{\partial y_{2}}{\partial x}\vdots  \frac{\partial y_{m}}{\partial x}
 \end{bmatrix}$$</p>
-<p>（列）向量关于（列）向量的导数是一个矩阵：</p>
-<p>$$\mathbf{x} =\begin{bmatrix}x_{1}  \x_{2}  \ \vdots  \x_{n}\end{bmatrix}\quad\mathbf{y} =\begin{bmatrix}y_{1}  \y_{2}  \ \vdots  \y_{m}\end{bmatrix}\quad\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\begin{bmatrix}
-\frac{\partial y_{1}}{\partial \mathbf{x}}\ \frac{\partial y_{2}}{\partial \mathbf{x}}\vdots  \frac{\partial y_{m}}{\partial \mathbf{x}}\end{bmatrix} = \begin{bmatrix} \frac{\partial{y_1}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_1}}{\partial{x_n}}  \ \vdots &amp; \ddots &amp; \vdots \ \frac{\partial{y_m}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_m}}{\partial{x_n}} \ \end{bmatrix}$$</p>
-</section>
-<section id="id2">
-<h2>常见的求导结果<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>标量关于向量的导数：</p>
-<p>$$\frac{\partial{\text{sum}(\mathbf{x})}}{\partial\mathbf{x}}=\mathbf{1}^{T},\quad \frac{\partial\left | \mathbf{x} \right |^{2} }{\partial\mathbf{x}}=2\mathbf{x}^{T}$$</p>
-<p>向量对向量求导：</p>
-<p>$$\frac{\partial{\mathbf{x}}}{\partial{\mathbf{x}}}=\mathbf{I},\quad\frac{\partial{\mathbf{A}\mathbf{x}}}{\partial{\mathbf{x}}}=\mathbf{A}$$</p>
+<p>向量（列）关于向量（列）的导数是一个矩阵：</p>
+<p>$$\mathbf{x} =\begin{bmatrix}x_{1}  \x_{2}  \ \vdots  \x_{n}\end{bmatrix}
+\quad
+\mathbf{y} =\begin{bmatrix}y_{1}  \y_{2}  \ \vdots  \y_{m}\end{bmatrix}$$
+$$\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\begin{bmatrix}
+\frac{\partial y_{1}}{\partial \mathbf{x}}\ \vdots  \frac{\partial y_{m}}{\partial \mathbf{x}}\end{bmatrix} = \begin{bmatrix} \frac{\partial{y_1}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_1}}{\partial{x_n}}  \ \vdots &amp; \ddots &amp; \vdots \ \frac{\partial{y_m}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_m}}{\partial{x_n}} \ \end{bmatrix}$$
+$$\frac{\partial \mathbf{x}}{\partial \mathbf{x}} = \mathbf{I}$$
+$$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
+<p>在这种布局下，链式法则对向量求导也成立。</p>
 <p>例.（线性回归）假设$\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}$，损失函数$z=\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2} $，求$\frac{\partial{z}}{\partial{\mathbf{w}}}$</p>
 <p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec8766b2-401a-4f59-804c-1d6b9370ea5a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ec8766b2-401a-4f59-804c-1d6b9370ea5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ac5fb958-0763-4ccf-8600-a0792b435b99">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ac5fb958-0763-4ccf-8600-a0792b435b99" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{split}
 \frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\\
 &amp;= 2(\mathbf{X}\mathbf{w}-\mathbf{y})^{T}\mathbf{X}
@@ -556,8 +546,8 @@ $$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
 \end{equation}\]</div>
 <p>$$</p>
 </section>
-<section id="id3">
-<h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>矩阵求导<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>类似地，我们可以把导数扩展到矩阵，导数的shape还是分子同分母反：</p>
 <p><img alt="image" src="../_images/diff.jpg" /></p>
 </section>
@@ -627,8 +617,8 @@ $$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives-and-gradients">
-   Partial Derivatives and Gradients
+  <a class="reference internal nav-link" href="#partial-derivatives">
+   Partial Derivatives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -638,11 +628,6 @@ $$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   常见的求导结果
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
    矩阵求导
   </a>
  </li>
