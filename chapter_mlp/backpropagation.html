@@ -57,7 +57,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/backpropagation';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -157,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                        优化算法
+                      </a>
+                    </li>
+                
     </ul>
 </nav>
       </div>
@@ -244,6 +250,13 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="0.html">
                         多层感知机
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                        优化算法
                       </a>
                     </li>
                 
@@ -337,9 +350,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dropout.html">Dropout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="batch-normalization.html">Batch Normalization</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">反向传播</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="activation.html">激活函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="initialization.html">初始化</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_optimization/0.html">优化算法</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-challenges.html">深度学习中的优化挑战</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gradient-descent.html">梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">RMSprop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">Adam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-schedule.html">学习率调度器</a></li>
 </ul>
 </li>
 </ul>
@@ -505,39 +526,20 @@ title="Print to PDF"
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   正向传播
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   预备知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
    反向传播
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     正向传播
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     预备知识
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frac-partial-l-partial-mathbf-x-begin-bmatrix-frac-partial-l-partial-x-1-frac-partial-l-partial-x-n-end-bmatrix">
-   $$
-\frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
-\frac{\partial L}{\partial x_{1}} \
-…\
-\frac{\partial L}{\partial x_{n}}
-\end{bmatrix}
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     反向传播
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -573,51 +575,32 @@ title="Print to PDF"
 <p>1.假设在正向传播中 $\mathbf{x} \to \mathbf{y} \to L$, 其中 $L \in \mathbb{R}$是损失， $\mathbf{x} \in \mathbb{R}^{n}$, $\mathbf{y} \in \mathbb{R} ^{m}$ 比 $\mathbf{x}$ 更靠近输出层:</p>
 <p>$$
 \frac{\partial L}{\partial \mathbf{y}} = \begin{bmatrix}
-\frac{\partial L}{\partial y_{1}} \
-…\
-\frac{\partial L}{\partial y_{m}}
-\end{bmatrix}
+\frac{\partial L}{\partial y_{1}},
+…
+,\frac{\partial L}{\partial y_{m}}
+\end{bmatrix}^T
 \quad
 ,
 \quad
 \frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
-\frac{\partial L}{\partial x_{1}} \
-…\
-\frac{\partial L}{\partial x_{n}}
-\end{bmatrix}
+\frac{\partial L}{\partial x_{1}},
+…
+,\frac{\partial L}{\partial x_{n}}
+\end{bmatrix}^{T}
 $$</p>
 <p>使用全微分公式:</p>
 <p>$$
 \frac{\partial L}{\partial x_{k}} = \sum_{j=1}^{m}\frac{\partial L}{\partial y_{j}}\frac{\partial y_{j}}{\partial x_{k}}
 $$</p>
 <p>从而我们可以计算 $\frac{\partial L}{\partial \mathbf{x}}$ 和 $\frac{\partial L}{\partial \mathbf{y}}$ 的关系:</p>
-</section>
-</section>
-<section id="frac-partial-l-partial-mathbf-x-begin-bmatrix-frac-partial-l-partial-x-1-frac-partial-l-partial-x-n-end-bmatrix">
-<h1>$$
-\frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
-\frac{\partial L}{\partial x_{1}} \
-…\
-\frac{\partial L}{\partial x_{n}}
-\end{bmatrix}<a class="headerlink" href="#frac-partial-l-partial-mathbf-x-begin-bmatrix-frac-partial-l-partial-x-1-frac-partial-l-partial-x-n-end-bmatrix" title="Permalink to this headline">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-4e7b64bf-b239-406b-948f-38bc3e284eef">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4e7b64bf-b239-406b-948f-38bc3e284eef" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
- \frac{\partial y_{1}}{\partial x_{1}} &amp; ... &amp; \frac{\partial y_{m}}{\partial x_{1}}\\
- \vdots  &amp; \ddots  &amp; \vdots \\
-  \frac{\partial y_{1}}{\partial x_{n}}&amp; .... &amp; \frac{\partial y_{m}}{\partial x_{n}}
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7ab69d80-c50a-458b-8574-46a2bac5da45">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7ab69d80-c50a-458b-8574-46a2bac5da45" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
- \frac{\partial L}{\partial y_{1}} \\
- ...\\
- \frac{\partial L}{\partial y_{m}}
-\end{bmatrix}\]</div>
-<p>=
+<p>$$
+\frac{\partial L}{\partial \mathbf{x}} =
 (\frac{\partial \mathbf{y}}{\partial \mathbf{x}})^{T}\frac{\partial L}{\partial \mathbf{y}}
 $$</p>
 <p>这里 $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ 是 jacobian 矩阵.</p>
 <p>2.矩阵乘法的 jacobian 矩阵，这很容易验证:</p>
 <p>$$\frac{\partial \mathbf{M}\mathbf{x}}{\partial \mathbf{x}}=\mathbf{M}$$</p>
+</section>
 <section id="id4">
 <h2>反向传播<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>recall 梯度下降公式:</p>
@@ -705,39 +688,20 @@ $$</p>
 </div>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   正向传播
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   预备知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
    反向传播
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     正向传播
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     预备知识
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frac-partial-l-partial-mathbf-x-begin-bmatrix-frac-partial-l-partial-x-1-frac-partial-l-partial-x-n-end-bmatrix">
-   $$
-\frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
-\frac{\partial L}{\partial x_{1}} \
-…\
-\frac{\partial L}{\partial x_{n}}
-\end{bmatrix}
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     反向传播
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 

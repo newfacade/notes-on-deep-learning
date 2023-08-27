@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>初始化 &#8212; Notes on Deep Learning</title>
+    <title>深度学习中的优化挑战 &#8212; Notes on Deep Learning</title>
   
   
   
@@ -57,13 +57,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/initialization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_optimization/optimization-challenges';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="优化算法" href="../chapter_optimization/0.html" />
-    <link rel="prev" title="激活函数" href="activation.html" />
+    <link rel="next" title="梯度下降" href="gradient-descent.html" />
+    <link rel="prev" title="优化算法" href="0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -151,15 +150,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
                         多层感知机
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         优化算法
                       </a>
                     </li>
@@ -248,15 +247,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
                         多层感知机
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         优化算法
                       </a>
                     </li>
@@ -345,23 +344,23 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_linear/softmax-regression.html">Softmax回归</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">多层感知机</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mlp.html">多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regularization.html">正则化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dropout.html">Dropout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="batch-normalization.html">Batch Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="backpropagation.html">反向传播</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation.html">激活函数</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">初始化</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_mlp/0.html">多层感知机</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/mlp.html">多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/regularization.html">正则化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/dropout.html">Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/batch-normalization.html">Batch Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/backpropagation.html">反向传播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/activation.html">激活函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/initialization.html">初始化</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_optimization/0.html">优化算法</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-challenges.html">深度学习中的优化挑战</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gradient-descent.html">梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">动量法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">RMSprop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">Adam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-schedule.html">学习率调度器</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">优化算法</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">深度学习中的优化挑战</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gradient-descent.html">梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momentum.html">动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmsprop.html">RMSprop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adam.html">Adam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lr-schedule.html">学习率调度器</a></li>
 </ul>
 </li>
 </ul>
@@ -449,7 +448,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_mlp/initialization.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_optimization/optimization-challenges.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -474,7 +473,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/chapter_mlp/initialization.ipynb" target="_blank"
+      <li><a href="../_sources/chapter_optimization/optimization-challenges.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -517,7 +516,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>初始化</h1>
+    <h1>深度学习中的优化挑战</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -529,17 +528,22 @@ title="Print to PDF"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   对称性
+   画图函数
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xavier">
-   Xavier 初始化
+  <a class="reference internal nav-link" href="#id3">
+   局部最小值
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaiming">
-   Kaiming 初始化
+  <a class="reference internal nav-link" href="#id4">
+   鞍点
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   梯度消失
   </a>
  </li>
 </ul>
@@ -552,83 +556,122 @@ title="Print to PDF"
             <article class="bd-article" role="main">
               
   <section id="id1">
-<h1>初始化<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>深度学习中的优化挑战<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>初始化参数时需打破神经元的对称性<br/>
-Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播时，保证输入和输出的量级基本相等</p>
+<p>在深度学习中，大多数目标函数都很复杂，没有解析解，必须用数值优化算法，一般来说是梯度下降类算法<br/>
+本节我们用画图来直观的展现深度学习中的优化挑战：局部最小值、鞍点和梯度消失，共同点是梯度等于或接近0，但不是最优点<br/></p>
 </div>
 <section id="id2">
-<h2>对称性<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>想象一下，如果我们将层 $l$ 的所有参数初始化为 $\mathbf{W}^{[l]}=c_{l}, \mathbf{b}^{[l]} = d_{l}$ ， 其中 $c_{l},d_{l}$ 为常量，会发生什么情况：</p>
-<p>正向和反向传播时，层 $l$ 的所有神经元都是对称的，也就是说层 $l$ 实际上相当于只有一个神经元。</p>
+<h2>画图函数<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">d2l</span>
+
+
+<span class="c1">#@save</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+         <span class="n">fmts</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;m--&#39;</span><span class="p">,</span> <span class="s1">&#39;g-.&#39;</span><span class="p">,</span> <span class="s1">&#39;r:&#39;</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    画折线图</span>
+<span class="sd">    参数都是matplotlib画图的参数</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d2l</span><span class="o">.</span><span class="n">use_svg_display</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">figsize</span>
+    <span class="c1"># 可自定义坐标轴</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span> <span class="k">if</span> <span class="n">axes</span> <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+    <span class="c1"># Return True if `Z` (tensor or list) has 1 axis</span>
+    <span class="k">def</span> <span class="nf">has_one_axis</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">Z</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;__len__&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">has_one_axis</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">has_one_axis</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">Y</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fmt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">fmts</span><span class="p">):</span>
+        <span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
+    <span class="n">d2l</span><span class="o">.</span><span class="n">set_axes</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">,</span> <span class="n">xscale</span><span class="p">,</span> <span class="n">yscale</span><span class="p">,</span> <span class="n">legend</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@save</span>
+<span class="k">def</span> <span class="nf">annotate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">xytext</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    画箭头做标注</span>
+<span class="sd">    :param text: 文本</span>
+<span class="sd">    :param xy: 要指向的位置</span>
+<span class="sd">    :param xytext: 文本的位置</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">,</span>
+                       <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="xavier">
-<h2>Xavier 初始化<a class="headerlink" href="#xavier" title="Permalink to this headline">#</a></h2>
-<p>考虑一个没有 bias term 和激活函数的全连接层：</p>
-<p>$$o_{i} = \sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j}$$</p>
-<p>假设 $w_{ij}$ 的均值为0，方差为 $\sigma^{2}$; $x_{j}$ 的均值为0，方差为 $\gamma^{2}$; $w_{ij}, x_{j}$ 相互独立。那么 $o_{i}$ 的均值显然为0，它的方差为：</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b2355c9-20d3-43b2-8b18-4026f5aeda1f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7b2355c9-20d3-43b2-8b18-4026f5aeda1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\begin{split}
-\text{Var}[o_{i}] =&amp; E[o_{i}^{2}] - (E[o_{i}])^{2}\\
-=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}x_{j}^{2}] \\
-=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}]E[x_{j}^{2}] \\
-=&amp;\text{fan}_{in}\sigma^{2}\gamma^{2}
-\end{split}
-\end{equation}\]</div>
-<p>$$</p>
-<p>为了保证输入和输出的方差不变，需要 $\text{fan}_{in}\sigma^{2}=1$。</p>
-<p>另一方面，在反向传播中, 我们有:</p>
-<p>$$\frac{\partial L}{\partial x_{j}} = \sum_{i=1}^{\text{fan}<em>{out}}w</em>{ij}\frac{\partial L}{\partial o_{i}}$$</p>
-<p>类似地，为了维持梯度的方差，需要 $\text{fan}_{out}\sigma^{2} = 1$。</p>
-<p>若 $\text{fan}<em>{in} \ne \text{fan}</em>{out}$ 上述两式不能同时成立, pytorch的实现里取了折中:</p>
-<p>$$\frac{1}{2}(\text{fan}<em>{in} + \text{fan}</em>{out})\sigma^{2} = 1 \ \text{ or }\ \sigma = \sqrt{\frac{2}{\text{fan}<em>{in} + \text{fan}</em>{out}}}$$</p>
+<section id="id3">
+<h2>局部最小值<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1"># xavier_normal初始化</span>
-<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">xavier_normal_</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0332, -0.0838, -0.4253, -0.4172,  0.3161],
-        [ 0.6112, -0.0679,  0.3572,  0.4847, -0.4388],
-        [ 0.4275,  0.0573, -0.3956, -0.2125,  0.7110]])
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="kaiming">
-<h2>Kaiming 初始化<a class="headerlink" href="#kaiming" title="Permalink to this headline">#</a></h2>
-<p>当激活函数为 $\mbox{ReLU}$ 时:</p>
-<p>$$o_{i} = \mbox{ReLU}(\sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j})$$</p>
-<p>在与Xavier初始化一样的假设下，$o_{i}$的方差为Xavier初始化中$o_{i}$方差的一半（因为有一半为0）:</p>
-<p>$$\text{Var}(o_{i}) = \frac{1}{2}\text{fan}_{in}\sigma^{2}\gamma^{2}$$</p>
-<p>保持正向传播时方差不变需 $\text{fan}<em>{in}\sigma^{2}=2$。保持梯度方差不变需 $\text{fan}</em>{out}\sigma^{2}=2$。pytorch中实现的Kaiming初始化：</p>
-<p>$$\sigma = \sqrt{\frac{2}{\mbox{fan}_{mode}}}$$</p>
-<p>其中 $\text{fan}<em>{mode}$ 为 $\text{fan}</em>{in}$ or $\text{fan}_{out}$.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1"># nn.Linear默认使用kaiming_uniform_，其中mode=`fan_in`，即优先稳定正向传播</span>
-<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_in&#39;</span><span class="p">,</span> <span class="n">nonlinearity</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;local minimum&#39;</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.77</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;global minimum&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.95</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.7250, -1.0235,  0.1649, -0.2647,  0.9801],
-        [ 0.5283,  0.9472,  0.4259,  0.5999, -0.2434],
-        [-0.2071, -0.7180,  0.3021, -0.6649,  0.1248]])
+<img alt="../_images/fdafcae7d51bfdc48924b956118ec738dd72367756de937650f263df391c922d.svg" src="../_images/fdafcae7d51bfdc48924b956118ec738dd72367756de937650f263df391c922d.svg" /></div>
+</div>
+</section>
+<section id="id4">
+<h2>鞍点<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;saddle point&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/33ac6871f59ef83c12c326a99e40909cf0b293dd796c886973fab7e1c0c96592.svg" src="../_images/33ac6871f59ef83c12c326a99e40909cf0b293dd796c886973fab7e1c0c96592.svg" /></div>
+</div>
+</section>
+<section id="id5">
+<h2>梯度消失<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;vanishing gradient&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c9fa6430038a1692c20f5367d665ad4f9c1173913f39e3c3cb18155a9d7efb01.svg" src="../_images/c9fa6430038a1692c20f5367d665ad4f9c1173913f39e3c3cb18155a9d7efb01.svg" /></div>
 </div>
 </section>
 </section>
@@ -646,7 +689,7 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter_mlp"
+            path: "./chapter_optimization"
         },
         predefinedOutput: true
     }
@@ -661,17 +704,17 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="activation.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="0.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">激活函数</p>
+          <p class="prev-next-title">优化算法</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="../chapter_optimization/0.html" title="next page">
+  <a class='right-next' id="next-link" href="gradient-descent.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">优化算法</p>
+      <p class="prev-next-title">梯度下降</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -693,17 +736,22 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   对称性
+   画图函数
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xavier">
-   Xavier 初始化
+  <a class="reference internal nav-link" href="#id3">
+   局部最小值
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaiming">
-   Kaiming 初始化
+  <a class="reference internal nav-link" href="#id4">
+   鞍点
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   梯度消失
   </a>
  </li>
 </ul>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>初始化 &#8212; Notes on Deep Learning</title>
+    <title>梯度下降 &#8212; Notes on Deep Learning</title>
   
   
   
@@ -57,13 +57,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/initialization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_optimization/gradient-descent';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="优化算法" href="../chapter_optimization/0.html" />
-    <link rel="prev" title="激活函数" href="activation.html" />
+    <link rel="next" title="动量法" href="momentum.html" />
+    <link rel="prev" title="深度学习中的优化挑战" href="optimization-challenges.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -151,15 +150,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
                         多层感知机
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         优化算法
                       </a>
                     </li>
@@ -248,15 +247,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
                         多层感知机
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_optimization/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         优化算法
                       </a>
                     </li>
@@ -345,23 +344,23 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_linear/softmax-regression.html">Softmax回归</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">多层感知机</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mlp.html">多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regularization.html">正则化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dropout.html">Dropout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="batch-normalization.html">Batch Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="backpropagation.html">反向传播</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation.html">激活函数</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">初始化</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_mlp/0.html">多层感知机</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/mlp.html">多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/regularization.html">正则化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/dropout.html">Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/batch-normalization.html">Batch Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/backpropagation.html">反向传播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/activation.html">激活函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/initialization.html">初始化</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_optimization/0.html">优化算法</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-challenges.html">深度学习中的优化挑战</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gradient-descent.html">梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">动量法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">RMSprop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">Adam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-schedule.html">学习率调度器</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">优化算法</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="optimization-challenges.html">深度学习中的优化挑战</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momentum.html">动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmsprop.html">RMSprop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adam.html">Adam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lr-schedule.html">学习率调度器</a></li>
 </ul>
 </li>
 </ul>
@@ -449,7 +448,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_mlp/initialization.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_optimization/gradient-descent.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -474,7 +473,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/chapter_mlp/initialization.ipynb" target="_blank"
+      <li><a href="../_sources/chapter_optimization/gradient-descent.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -517,7 +516,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>初始化</h1>
+    <h1>梯度下降</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -529,17 +528,17 @@ title="Print to PDF"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   对称性
+   梯度下降
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xavier">
-   Xavier 初始化
+  <a class="reference internal nav-link" href="#id3">
+   随机梯度下降
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaiming">
-   Kaiming 初始化
+  <a class="reference internal nav-link" href="#id4">
+   小批量随机梯度下降
   </a>
  </li>
 </ul>
@@ -552,80 +551,47 @@ title="Print to PDF"
             <article class="bd-article" role="main">
               
   <section id="id1">
-<h1>初始化<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>梯度下降<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>初始化参数时需打破神经元的对称性<br/>
-Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播时，保证输入和输出的量级基本相等</p>
+<p>梯度下降法是最基本的优化算法，但一次更新慢<br/>
+随机梯度下降一次只使用一个样本的梯度进行更新，但随机性大且数据效率低<br/>
+小批量随机梯度下降相对最好</p>
 </div>
 <section id="id2">
-<h2>对称性<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>想象一下，如果我们将层 $l$ 的所有参数初始化为 $\mathbf{W}^{[l]}=c_{l}, \mathbf{b}^{[l]} = d_{l}$ ， 其中 $c_{l},d_{l}$ 为常量，会发生什么情况：</p>
-<p>正向和反向传播时，层 $l$ 的所有神经元都是对称的，也就是说层 $l$ 实际上相当于只有一个神经元。</p>
+<h2>梯度下降<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>目标函数 $f: \mathbb{R}^{d} \to \mathbb{R}$ 的泰勒展开式为:</p>
+<p>$$f(\mathbf{x} + \epsilon) = f(\mathbf{x}) + \epsilon^{T}\nabla{f(\mathbf{x})} + \mathcal{O}(\left | \epsilon \right |^2)$$</p>
+<p>由此可以看出，$f$ 下降最快的方向是梯度的反方向  $-\nabla{f(\mathbf{x})}$。由此可推导出梯度下降法:</p>
+<p>$$\mathbf{x}<em>{t} = \mathbf{x}</em>{t-1} - \eta\nabla{f(\mathbf{x}_{t-1})}$$</p>
+<p>其中 $\eta &gt; 0$ 是学习率.</p>
+<p><img alt="jupyter" src="../_images/gd1.svg" /></p>
 </section>
-<section id="xavier">
-<h2>Xavier 初始化<a class="headerlink" href="#xavier" title="Permalink to this headline">#</a></h2>
-<p>考虑一个没有 bias term 和激活函数的全连接层：</p>
-<p>$$o_{i} = \sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j}$$</p>
-<p>假设 $w_{ij}$ 的均值为0，方差为 $\sigma^{2}$; $x_{j}$ 的均值为0，方差为 $\gamma^{2}$; $w_{ij}, x_{j}$ 相互独立。那么 $o_{i}$ 的均值显然为0，它的方差为：</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b2355c9-20d3-43b2-8b18-4026f5aeda1f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7b2355c9-20d3-43b2-8b18-4026f5aeda1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\begin{split}
-\text{Var}[o_{i}] =&amp; E[o_{i}^{2}] - (E[o_{i}])^{2}\\
-=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}x_{j}^{2}] \\
-=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}]E[x_{j}^{2}] \\
-=&amp;\text{fan}_{in}\sigma^{2}\gamma^{2}
-\end{split}
-\end{equation}\]</div>
-<p>$$</p>
-<p>为了保证输入和输出的方差不变，需要 $\text{fan}_{in}\sigma^{2}=1$。</p>
-<p>另一方面，在反向传播中, 我们有:</p>
-<p>$$\frac{\partial L}{\partial x_{j}} = \sum_{i=1}^{\text{fan}<em>{out}}w</em>{ij}\frac{\partial L}{\partial o_{i}}$$</p>
-<p>类似地，为了维持梯度的方差，需要 $\text{fan}_{out}\sigma^{2} = 1$。</p>
-<p>若 $\text{fan}<em>{in} \ne \text{fan}</em>{out}$ 上述两式不能同时成立, pytorch的实现里取了折中:</p>
-<p>$$\frac{1}{2}(\text{fan}<em>{in} + \text{fan}</em>{out})\sigma^{2} = 1 \ \text{ or }\ \sigma = \sqrt{\frac{2}{\text{fan}<em>{in} + \text{fan}</em>{out}}}$$</p>
+<section id="id3">
+<h2>随机梯度下降<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>在深度学习中，目标函数是所有训练样本的损失函数的均值:</p>
+<p>$$f(\mathbf{x}) = \frac{1}{n}\sum_{i=1}^{n}f_{i}(\mathbf{x})$$</p>
+<p>梯度:</p>
+<p>$$\nabla{f(\mathbf{x})} = \frac{1}{n}\sum_{i=1}^{n}\nabla{f_{i}(\mathbf{x})}$$</p>
+<p>在梯度下降中，每一次更新的时间复杂度为  $\mathcal{O}(n)$, 当训练集很大时更新会很慢。</p>
+<p>随机梯度下降（Stochastic gradient descent，SGD） 每次更新会随机选取一个样本，仅使用此样本的梯度进行更新:</p>
+<p>$$\mathbf{x}<em>{t} = \mathbf{x}</em>{t-1} - \eta\nabla{f_{i}(\mathbf{x}_{t-1})}$$</p>
+<p>时间复杂度为 $\mathcal{O}(1)$</p>
+</section>
+<section id="id4">
+<h2>小批量随机梯度下降<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>梯度下降更新太慢。</p>
+<p>SGD更新次数太多，随机性大，不能充分使用矢量化加速运算（数据效率低）。</p>
+<p>小批量随机梯度下降介乎两者之间，每次会使用一小批量（比如说64个、128个等）的样本来进行更新。它可以充分使用矢量化加速运算，随机性也可以接受。</p>
+<p>$$\mathbf{x}<em>{t} = \mathbf{x}</em>{t-1} - \frac{\eta}{|\mathcal{B}<em>{t}|}\sum</em>{i\in\mathcal{B}<em>{t}}\nabla{f</em>{i}(\mathbf{x}_{t-1})}$$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 
-<span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1"># xavier_normal初始化</span>
-<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">xavier_normal_</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0332, -0.0838, -0.4253, -0.4172,  0.3161],
-        [ 0.6112, -0.0679,  0.3572,  0.4847, -0.4388],
-        [ 0.4275,  0.0573, -0.3956, -0.2125,  0.7110]])
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="kaiming">
-<h2>Kaiming 初始化<a class="headerlink" href="#kaiming" title="Permalink to this headline">#</a></h2>
-<p>当激活函数为 $\mbox{ReLU}$ 时:</p>
-<p>$$o_{i} = \mbox{ReLU}(\sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j})$$</p>
-<p>在与Xavier初始化一样的假设下，$o_{i}$的方差为Xavier初始化中$o_{i}$方差的一半（因为有一半为0）:</p>
-<p>$$\text{Var}(o_{i}) = \frac{1}{2}\text{fan}_{in}\sigma^{2}\gamma^{2}$$</p>
-<p>保持正向传播时方差不变需 $\text{fan}<em>{in}\sigma^{2}=2$。保持梯度方差不变需 $\text{fan}</em>{out}\sigma^{2}=2$。pytorch中实现的Kaiming初始化：</p>
-<p>$$\sigma = \sqrt{\frac{2}{\mbox{fan}_{mode}}}$$</p>
-<p>其中 $\text{fan}<em>{mode}$ 为 $\text{fan}</em>{in}$ or $\text{fan}_{out}$.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1"># nn.Linear默认使用kaiming_uniform_，其中mode=`fan_in`，即优先稳定正向传播</span>
-<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_in&#39;</span><span class="p">,</span> <span class="n">nonlinearity</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.7250, -1.0235,  0.1649, -0.2647,  0.9801],
-        [ 0.5283,  0.9472,  0.4259,  0.5999, -0.2434],
-        [-0.2071, -0.7180,  0.3021, -0.6649,  0.1248]])
+<span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1"># 实际上就是小批量随机梯度下降，batch_size在data_iter中定义</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -646,7 +612,7 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter_mlp"
+            path: "./chapter_optimization"
         },
         predefinedOutput: true
     }
@@ -661,17 +627,17 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="activation.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="optimization-challenges.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">激活函数</p>
+          <p class="prev-next-title">深度学习中的优化挑战</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="../chapter_optimization/0.html" title="next page">
+  <a class='right-next' id="next-link" href="momentum.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">优化算法</p>
+      <p class="prev-next-title">动量法</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -693,17 +659,17 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   对称性
+   梯度下降
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xavier">
-   Xavier 初始化
+  <a class="reference internal nav-link" href="#id3">
+   随机梯度下降
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaiming">
-   Kaiming 初始化
+  <a class="reference internal nav-link" href="#id4">
+   小批量随机梯度下降
   </a>
  </li>
 </ul>
