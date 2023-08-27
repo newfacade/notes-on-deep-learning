@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>数据预处理 &#8212; Notes on Deep Learning</title>
+    <title>Data Preprocessing &#8212; Notes on Deep Learning</title>
   
   
   
@@ -61,8 +61,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="线性代数" href="linear-algebra.html" />
-    <link rel="prev" title="Tensor" href="tensor.html" />
+    <link rel="next" title="Linear Algebra" href="linear-algebra.html" />
+    <link rel="prev" title="Tensors" href="tensor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -288,11 +288,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">Prelimilaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensor</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">数据预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">线性代数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculus.html">导数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autograd.html">自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculus.html">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autograd.html">Automatic Differentiation</a></li>
 </ul>
 </li>
 </ul>
@@ -448,7 +448,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>数据预处理</h1>
+    <h1>Data Preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -459,18 +459,18 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   创建和读取数据集
+  <a class="reference internal nav-link" href="#reading-the-dataset">
+   Reading the dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   处理缺失值
+  <a class="reference internal nav-link" href="#missing-values">
+   Missing values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   转换为张量格式
+  <a class="reference internal nav-link" href="#conversion-to-the-tensor-format">
+   Conversion to the tensor format
   </a>
  </li>
 </ul>
@@ -482,28 +482,26 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section id="id1">
-<h1>数据预处理<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <section id="data-preprocessing">
+<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>为了能⽤深度学习来解决现实世界的问题，我们经常从预处理原始数据开始，而不是从那些准备好的张量格
-式数据开始。<br/>
-我们通常使⽤pandas包进行数据预处理。</p>
+<p>To apply deep learning in the wild we must extract messy data stored in arbitrary formats, and preprocessing it to suit our needs. Fortunately, the pandas library can do much of the heavy lifting.</p>
 </div>
-<section id="id2">
-<h2>创建和读取数据集<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="reading-the-dataset">
+<h2>Reading the dataset<a class="headerlink" href="#reading-the-dataset" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;house_tiny.csv&quot;</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;NumRooms,Alley,Price</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;NA,Pave,127500</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;2,NA,106000</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;4,NA,178100</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;NA,NA,140000</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;house_tiny.csv&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;NumRooms,RoofType,Price</span>
+<span class="s1">NA,NA,127500</span>
+<span class="s1">2,NA,106000</span>
+<span class="s1">4,Slate,178100</span>
+<span class="s1">NA,NA,140000&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -512,6 +510,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
+<span class="c1"># pandas replaced all CSV entries with value NA with a special NaN (not a number) value</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
@@ -537,7 +536,7 @@ title="Print to PDF"
     <tr style="text-align: right;">
       <th></th>
       <th>NumRooms</th>
-      <th>Alley</th>
+      <th>RoofType</th>
       <th>Price</th>
     </tr>
   </thead>
@@ -545,7 +544,7 @@ title="Print to PDF"
     <tr>
       <th>0</th>
       <td>NaN</td>
-      <td>Pave</td>
+      <td>NaN</td>
       <td>127500</td>
     </tr>
     <tr>
@@ -557,7 +556,7 @@ title="Print to PDF"
     <tr>
       <th>2</th>
       <td>4.0</td>
-      <td>NaN</td>
+      <td>Slate</td>
       <td>178100</td>
     </tr>
     <tr>
@@ -571,23 +570,17 @@ title="Print to PDF"
 </div></div></div>
 </div>
 </section>
-<section id="id3">
-<h2>处理缺失值<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="missing-values">
+<h2>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iloc使用index进行索引和切片</span>
-<span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="c1"># 使用平均值插值，只处理数值列</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integer-location based indexing</span>
+<span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">inputs</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-3-592d5feba441&gt;:4: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying &#39;numeric_only=None&#39; is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
-  inputs = inputs.fillna(inputs.mean())
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -607,14 +600,14 @@ title="Print to PDF"
     <tr style="text-align: right;">
       <th></th>
       <th>NumRooms</th>
-      <th>Alley</th>
+      <th>RoofType</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.0</td>
-      <td>Pave</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -624,11 +617,11 @@ title="Print to PDF"
     <tr>
       <th>2</th>
       <td>4.0</td>
-      <td>NaN</td>
+      <td>Slate</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3.0</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -637,7 +630,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将NaN视为一个类别，处理类别型数据</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for categorical input fields, we can treat NaN as a category</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">dummy_na</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">inputs</span>
 </pre></div>
@@ -663,16 +656,16 @@ title="Print to PDF"
     <tr style="text-align: right;">
       <th></th>
       <th>NumRooms</th>
-      <th>Alley_Pave</th>
-      <th>Alley_nan</th>
+      <th>RoofType_Slate</th>
+      <th>RoofType_nan</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.0</td>
-      <td>1</td>
+      <td>NaN</td>
       <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -683,8 +676,69 @@ title="Print to PDF"
     <tr>
       <th>2</th>
       <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
       <td>0</td>
       <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for missing numerical values, we can replace the NaN entries with the mean value</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="n">inputs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NumRooms</th>
+      <th>RoofType_Slate</th>
+      <th>RoofType_nan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -697,24 +751,23 @@ title="Print to PDF"
 </div></div></div>
 </div>
 </section>
-<section id="id4">
-<h2>转换为张量格式<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="conversion-to-the-tensor-format">
+<h2>Conversion to the tensor format<a class="headerlink" href="#conversion-to-the-tensor-format" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="c1"># values是ndarray</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">targets</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[3., 1., 0.],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[3., 0., 1.],
          [2., 0., 1.],
-         [4., 0., 1.],
+         [4., 1., 0.],
          [3., 0., 1.]], dtype=torch.float64),
- tensor([127500, 106000, 178100, 140000]))
+ tensor([127500., 106000., 178100., 140000.], dtype=torch.float64))
 </pre></div>
 </div>
 </div>
@@ -754,13 +807,13 @@ title="Print to PDF"
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Tensor</p>
+          <p class="prev-next-title">Tensors</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="linear-algebra.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">线性代数</p>
+      <p class="prev-next-title">Linear Algebra</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -781,18 +834,18 @@ title="Print to PDF"
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   创建和读取数据集
+  <a class="reference internal nav-link" href="#reading-the-dataset">
+   Reading the dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   处理缺失值
+  <a class="reference internal nav-link" href="#missing-values">
+   Missing values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   转换为张量格式
+  <a class="reference internal nav-link" href="#conversion-to-the-tensor-format">
+   Conversion to the tensor format
   </a>
  </li>
 </ul>

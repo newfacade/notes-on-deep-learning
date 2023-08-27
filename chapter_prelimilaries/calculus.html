@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>导数 &#8212; Notes on Deep Learning</title>
+    <title>Calculus &#8212; Notes on Deep Learning</title>
   
   
   
@@ -61,8 +61,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="自动微分" href="autograd.html" />
-    <link rel="prev" title="线性代数" href="linear-algebra.html" />
+    <link rel="next" title="Automatic Differentiation" href="autograd.html" />
+    <link rel="prev" title="Linear Algebra" href="linear-algebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -288,11 +288,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">Prelimilaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">数据预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">线性代数</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">导数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autograd.html">自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autograd.html">Automatic Differentiation</a></li>
 </ul>
 </li>
 </ul>
@@ -448,7 +448,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>导数</h1>
+    <h1>Calculus</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -459,17 +459,27 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
+   Derivatives and Differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-derivatives-and-gradients">
+   Partial Derivatives and Gradients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
    向量求导
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    常见的求导结果
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    矩阵求导
   </a>
  </li>
@@ -482,31 +492,53 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section id="id1">
-<h1>导数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <section id="calculus">
+<h1>Calculus<a class="headerlink" href="#calculus" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>我们可以将导数的概念扩展到向量，甚至任意张量。</p>
+<p>Differential calculus can tell us how to increase or decrease a function’s value by manipulating its arguments. This comes in handy for the optimization problems that we face in deep learning, where we repeatedly update our parameters in order to decrease the loss function.</p>
 </div>
-<section id="id2">
-<h2>向量求导<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>我们使用常用的分子布局符号。</p>
-<p>标量关于（列）向量的导数是一个行向量：</p>
-<p>$$\mathbf{x} =\begin{bmatrix}x_{1}  \x_{2}  \ \vdots  \x_{n}\end{bmatrix}\quad
-\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
-\frac{\partial y}{\partial x_{1}}&amp; \frac{\partial y}{\partial x_{2}}&amp;…  &amp;\frac{\partial y}{\partial x_{n}}
+<section id="derivatives-and-differentiation">
+<h2>Derivatives and Differentiation<a class="headerlink" href="#derivatives-and-differentiation" title="Permalink to this headline">#</a></h2>
+<p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function $f:\mathbb{R}\to\mathbb{R}$</p>
+<p>$$f’(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$</p>
+<p>When $f’(x)$ exits, $f$ is said to be differentiable at $x$.</p>
+</section>
+<section id="partial-derivatives-and-gradients">
+<h2>Partial Derivatives and Gradients<a class="headerlink" href="#partial-derivatives-and-gradients" title="Permalink to this headline">#</a></h2>
+<p>Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The partial derivative of $y$ with respect to $x_{i}$ is</p>
+<p>$$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$</p>
+<p>We can treat $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ as constants
+and calculate the derivative of $y$ with respect to $x_i$.</p>
+<p>We can concatenate partial derivatives of a multivariant function with respect to all its variables to obtain a vector that is called the gradient of the function. Suppose that the input of the function $f:\mathbb{R}^{n}\to\mathbb{R}$ is a $n-$dimensional vector $\mathbf{x}=[x_{1},x_{2},\ldots,x_{n}]^\top$ and the output is a scalar, the gradient is</p>
+<p>$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \left[\frac{\partial y}{\partial x_1}, \frac{\partial y}{\partial x_2}, \ldots
+\frac{\partial y}{\partial x_n})\right]^\top.$$</p>
+</section>
+<section id="id1">
+<h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>我们使用常用的分子布局符号。<br>
+标量关于<code class="docutils literal notranslate"><span class="pre">列向量</span></code>的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：</p>
+<p>$$
+\begin{bmatrix}
+1 &amp; 2 &amp; 3\
+a &amp; b &amp; c
+\end{bmatrix}
+$$</p>
+<p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}$$
+$$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
+\frac{\partial y}{\partial x_{1}}&amp; \frac{\partial y}{\partial x_{2}}&amp; \ldots  &amp;\frac{\partial y}{\partial x_{n}}
 \end{bmatrix}$$</p>
-<p>（列）向量关于标量的导数是一个列向量：</p>
-<p>$$\mathbf{y} =\begin{bmatrix}y_{1}  \y_{2}  \ \vdots  \y_{m}\end{bmatrix}\quad
-\frac{\partial{\mathbf{y}}}{\partial{x}}=\begin{bmatrix}
+<p><code class="docutils literal notranslate"><span class="pre">列向量</span></code>关于标量的导数是一个<code class="docutils literal notranslate"><span class="pre">列向量</span></code>：</p>
+<p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}$$</p>
+<p>$$\frac{\partial{\mathbf{y}}}{\partial{x}}=\begin{bmatrix}
 \frac{\partial y_{1}}{\partial x}\ \frac{\partial y_{2}}{\partial x}\vdots  \frac{\partial y_{m}}{\partial x}
 \end{bmatrix}$$</p>
 <p>（列）向量关于（列）向量的导数是一个矩阵：</p>
 <p>$$\mathbf{x} =\begin{bmatrix}x_{1}  \x_{2}  \ \vdots  \x_{n}\end{bmatrix}\quad\mathbf{y} =\begin{bmatrix}y_{1}  \y_{2}  \ \vdots  \y_{m}\end{bmatrix}\quad\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\begin{bmatrix}
 \frac{\partial y_{1}}{\partial \mathbf{x}}\ \frac{\partial y_{2}}{\partial \mathbf{x}}\vdots  \frac{\partial y_{m}}{\partial \mathbf{x}}\end{bmatrix} = \begin{bmatrix} \frac{\partial{y_1}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_1}}{\partial{x_n}}  \ \vdots &amp; \ddots &amp; \vdots \ \frac{\partial{y_m}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_m}}{\partial{x_n}} \ \end{bmatrix}$$</p>
 </section>
-<section id="id3">
-<h2>常见的求导结果<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>常见的求导结果<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>标量关于向量的导数：</p>
 <p>$$\frac{\partial{\text{sum}(\mathbf{x})}}{\partial\mathbf{x}}=\mathbf{1}^{T},\quad \frac{\partial\left | \mathbf{x} \right |^{2} }{\partial\mathbf{x}}=2\mathbf{x}^{T}$$</p>
 <p>向量对向量求导：</p>
@@ -521,8 +553,8 @@ title="Print to PDF"
 \end{equation}
 $$</p>
 </section>
-<section id="id4">
-<h2>矩阵求导<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>类似地，我们可以把导数扩展到矩阵，导数的shape还是分子同分母反：</p>
 <p><img alt="image" src="../_images/diff.jpg" /></p>
 </section>
@@ -560,13 +592,13 @@ $$</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">线性代数</p>
+          <p class="prev-next-title">Linear Algebra</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="autograd.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">自动微分</p>
+      <p class="prev-next-title">Automatic Differentiation</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -587,17 +619,27 @@ $$</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
+   Derivatives and Differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-derivatives-and-gradients">
+   Partial Derivatives and Gradients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
    向量求导
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    常见的求导结果
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    矩阵求导
   </a>
  </li>
