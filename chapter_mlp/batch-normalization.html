@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Calculus &#8212; Notes on Deep Learning</title>
+    <title>Batch Normalization &#8212; Notes on Deep Learning</title>
   
   
   
@@ -57,13 +57,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_prelimilaries/calculus';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/batch-normalization';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Automatic Differentiation" href="autograd.html" />
-    <link rel="prev" title="Linear Algebra" href="linear-algebra.html" />
+    <link rel="next" title="反向传播" href="backpropagation.html" />
+    <link rel="prev" title="Dropout" href="dropout.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -137,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
@@ -151,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         多层感知机
                       </a>
                     </li>
@@ -227,8 +226,8 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
@@ -241,8 +240,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         多层感知机
                       </a>
                     </li>
@@ -316,12 +315,12 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">Prelimilaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Data Preprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autograd.html">Automatic Differentiation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_prelimilaries/0.html">Prelimilaries</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/pandas.html">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/calculus.html">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/autograd.html">Automatic Differentiation</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_linear/0.html">线性神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -331,15 +330,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_linear/softmax-regression.html">Softmax回归</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_mlp/0.html">多层感知机</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/mlp.html">多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/regularization.html">正则化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/dropout.html">Dropout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/batch-normalization.html">Batch Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/backpropagation.html">反向传播</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">多层感知机</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlp.html">多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regularization.html">正则化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dropout.html">Dropout</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Batch Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backpropagation.html">反向传播</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/activation.html">激活函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/initialization.html">初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation.html">激活函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="initialization.html">初始化</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +426,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_prelimilaries/calculus.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_mlp/batch-normalization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -452,7 +451,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/chapter_prelimilaries/calculus.ipynb" target="_blank"
+      <li><a href="../_sources/chapter_mlp/batch-normalization.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -495,7 +494,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Calculus</h1>
+    <h1>Batch Normalization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -506,28 +505,13 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
-   Derivatives and Differentiation
+  <a class="reference internal nav-link" href="#intuition">
+   Intuition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives">
-   Partial Derivatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   向量求导
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   常用的求导结果
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   矩阵求导
+  <a class="reference internal nav-link" href="#pytorchbatch-normalization">
+   Pytorch中的Batch Normalization
   </a>
  </li>
 </ul>
@@ -539,67 +523,45 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section id="calculus">
-<h1>Calculus<a class="headerlink" href="#calculus" title="Permalink to this headline">#</a></h1>
+  <section id="batch-normalization">
+<h1>Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Differential calculus can tell us how to increase or decrease a function’s value by manipulating its arguments. This comes in handy for the optimization problems that we face in deep learning, where we repeatedly update our parameters in order to decrease the loss function.</p>
+<p>同正则化、Dropout一样，Batch Normalization（BN）也是一种处理深度神经网络过拟合的方法<br/>
+Batch Normalization可以加速网络收敛，让我们能够训练更深的网络</p>
 </div>
-<section id="derivatives-and-differentiation">
-<h2>Derivatives and Differentiation<a class="headerlink" href="#derivatives-and-differentiation" title="Permalink to this headline">#</a></h2>
-<p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function $f:\mathbb{R}\to\mathbb{R}$</p>
-<p>$$f’(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$</p>
-<p>When $f’(x)$ exits, $f$ is said to be differentiable at $x$.</p>
-<p>Suppose that $y=f(g(x))$ and that the underlying functions $y=f(u)$ and $u=g(x)$ are both differentiable. The chain rule states that</p>
-<p>$$\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}.$$</p>
+<section id="intuition">
+<h2>Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">#</a></h2>
+<p>回想第一节我们用线性回归预测Boston房价时，第一步是标准化输入特征，类似地，神经网络也需要标准化输入特征，其实不仅是输入层，中间各层也需要标准化</p>
+<p>此外更深层的网络非常复杂容易过拟合，这就有正则的需求</p>
+<p>Batch Normalization其实就是按批进行标准化，再统一拉伸和偏移：</p>
+<p>$$\mathrm{BN}(\mathbf{x}) = \boldsymbol{\gamma}\odot\frac{\mathbf{x} - \hat{\boldsymbol{\mu}}<em>{\mathcal{B}}}{\hat{\boldsymbol{\sigma}}</em>{\mathcal{B}}} + \boldsymbol{\beta}$$</p>
+<p>其中 $\hat{\boldsymbol{\mu}}<em>{\mathcal{B}}$ 和 $\hat{\boldsymbol{\sigma}}</em>{\mathcal{B}}$ 分别是小批量 $\mathcal{B}$ 的均值和标准差；拉伸参数 $\boldsymbol{\gamma}$ 和偏移参数 $\boldsymbol{\beta}$ 和 $\mathbf{x}$ 的形状相同，是模型需要学习的参数。</p>
+<p>均值和标准差的计算公式如下：</p>
+<p>$$\hat{\boldsymbol{\mu}}<em>{\mathcal{B}} = \frac{1}{|\mathcal{B}|}\sum</em>{x\in{\mathcal{B}}}\mathbf{x}$$</p>
+<p>$$\hat{\boldsymbol{\sigma}}<em>{\mathcal{B}}^{2} = \frac{1}{|\mathcal{B}|}\sum</em>{x\in{\mathcal{B}}}(\mathbf{x} - \hat{\boldsymbol{\mu}}_{\mathcal{B}})^{2} + \boldsymbol{\epsilon}$$</p>
 </section>
-<section id="partial-derivatives">
-<h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this headline">#</a></h2>
-<p>Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The partial derivative of $y$ with respect to $x_{i}$ is</p>
-<p>$$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$</p>
-<p>We can treat $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ as constants
-and calculate the derivative of $y$ with respect to $x_i$.</p>
-</section>
-<section id="id1">
-<h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>我们使用常用的分子布局符号，即分子 shape 不变分母转置。<br>
-标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：
-$$\mathbf{x} = \left[ x_{1}, x_{2}, \ldots, x_{n} \right]^{T}\in\mathbb{R}^{n\times 1}$$
-$$\frac{\partial{y}}{\partial\mathbf{x}}=\left[
-\frac{\partial y}{\partial x_{1}}, \frac{\partial y}{\partial x_{2}}, \ldots  ,\frac{\partial y}{\partial x_{n}}
-\right]\in\mathbb{R}^{1\times n}$$</p>
-<p>向量（列）关于标量的导数是一个列向量：</p>
-<p>$$\mathbf{y} = \left[ y_{1}, y_{2}, \ldots, y_{m} \right]^{T}\in\mathbb{R}^{m\times 1}$$
-$$\frac{\partial{\mathbf{y}}}{\partial{x}}=\left[
-\frac{\partial y_{1}}{\partial x}, \frac{\partial y_{2}}{\partial x},\ldots ,\frac{\partial y_{m}}{\partial x}
-\right]^{T}\in\mathbb{R}^{m\times 1}$$</p>
-<p>向量（列）关于向量（列）的导数是一个矩阵：
-$$\mathbf{x} = \left[ x_{1}, x_{2}, \ldots, x_{n} \right]^{T}\in\mathbb{R}^{n\times 1}$$
-$$\mathbf{y} = \left[ y_{1}, y_{2}, \ldots, y_{m} \right]^{T}\in\mathbb{R}^{m\times 1}$$
-$$\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\left[
-\frac{\partial y_{1}}{\partial \mathbf{x}}, \frac{\partial y_{2}}{\partial \mathbf{x}},\ldots ,\frac{\partial y_{m}}{\partial \mathbf{x}}
-\right]^{T}\in\mathbb{R}^{m\times n}$$</p>
-<p>在这种布局下，链式法则对向量求导也成立。</p>
-</section>
-<section id="id2">
-<h2>常用的求导结果<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>$$\frac{\partial \text{sum}(\mathbf{x})}{\partial \mathbf{x}} = \mathbf{1}^{T}$$
-$$\frac{\partial \left | \mathbf{x} \right | ^{2}}{\partial \mathbf{x}} = 2\mathbf{x}^{T}$$
-$$\frac{\partial \mathbf{x}}{\partial \mathbf{x}} = \mathbf{I}$$
-$$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
-<p>例.（线性回归）假设$\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}$，损失函数$z=\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2} $，求$\frac{\partial{z}}{\partial{\mathbf{w}}}$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-\frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\\
-&amp;= 2(\mathbf{X}\mathbf{w}-\mathbf{y})^{T}\mathbf{X}
-\end{split}
-\end{equation*}\]</div>
-</section>
-<section id="id3">
-<h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>类似地，我们可以把导数扩展到矩阵：</p>
-<p><img alt="image" src="../_images/diff.jpg" /></p>
+<section id="pytorchbatch-normalization">
+<h2>Pytorch中的Batch Normalization<a class="headerlink" href="#pytorchbatch-normalization" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+    <span class="c1"># BN一般在全连接层之后，激活函数之前，需指定输入的维度</span>
+    <span class="c1"># CNN也有其对应的BN层即BatchNorm2d，后面会讲</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Batch Normalization和Dropout一起使用的话 1+1 &lt; 1，所以不要一起使用，二者选其一就行<br/>
+Batch Normalization也有正则的效果，所以一般不和正则化一起使用</p>
+</div>
 </section>
 </section>
 
@@ -616,7 +578,7 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter_prelimilaries"
+            path: "./chapter_mlp"
         },
         predefinedOutput: true
     }
@@ -631,17 +593,17 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="linear-algebra.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="dropout.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Linear Algebra</p>
+          <p class="prev-next-title">Dropout</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="autograd.html" title="next page">
+  <a class='right-next' id="next-link" href="backpropagation.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Automatic Differentiation</p>
+      <p class="prev-next-title">反向传播</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -662,28 +624,13 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
-   Derivatives and Differentiation
+  <a class="reference internal nav-link" href="#intuition">
+   Intuition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives">
-   Partial Derivatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   向量求导
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   常用的求导结果
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   矩阵求导
+  <a class="reference internal nav-link" href="#pytorchbatch-normalization">
+   Pytorch中的Batch Normalization
   </a>
  </li>
 </ul>

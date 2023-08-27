@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Calculus &#8212; Notes on Deep Learning</title>
+    <title>初始化 &#8212; Notes on Deep Learning</title>
   
   
   
@@ -58,12 +58,11 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_prelimilaries/calculus';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/initialization';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Automatic Differentiation" href="autograd.html" />
-    <link rel="prev" title="Linear Algebra" href="linear-algebra.html" />
+    <link rel="prev" title="激活函数" href="activation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="None">
   </head>
@@ -137,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
@@ -151,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         多层感知机
                       </a>
                     </li>
@@ -227,8 +226,8 @@ const thebe_selector_output = ".output, .cell_output"
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="0.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../chapter_prelimilaries/0.html">
                         Prelimilaries
                       </a>
                     </li>
@@ -241,8 +240,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../chapter_mlp/0.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="0.html">
                         多层感知机
                       </a>
                     </li>
@@ -316,12 +315,12 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">Prelimilaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Data Preprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autograd.html">Automatic Differentiation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_prelimilaries/0.html">Prelimilaries</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/pandas.html">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/calculus.html">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/autograd.html">Automatic Differentiation</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_linear/0.html">线性神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -331,15 +330,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_linear/softmax-regression.html">Softmax回归</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_mlp/0.html">多层感知机</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/mlp.html">多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/regularization.html">正则化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/dropout.html">Dropout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/batch-normalization.html">Batch Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/backpropagation.html">反向传播</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">多层感知机</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlp.html">多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regularization.html">正则化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dropout.html">Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch-normalization.html">Batch Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backpropagation.html">反向传播</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/activation.html">激活函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/initialization.html">初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation.html">激活函数</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">初始化</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +426,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_prelimilaries/calculus.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_mlp/initialization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -452,7 +451,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/chapter_prelimilaries/calculus.ipynb" target="_blank"
+      <li><a href="../_sources/chapter_mlp/initialization.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -495,7 +494,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Calculus</h1>
+    <h1>初始化</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -506,28 +505,18 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
-   Derivatives and Differentiation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives">
-   Partial Derivatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   向量求导
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   常用的求导结果
+   对称性
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   矩阵求导
+  <a class="reference internal nav-link" href="#xavier">
+   Xavier 初始化
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaiming">
+   Kaiming 初始化
   </a>
  </li>
 </ul>
@@ -539,67 +528,85 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section id="calculus">
-<h1>Calculus<a class="headerlink" href="#calculus" title="Permalink to this headline">#</a></h1>
+  <section id="id1">
+<h1>初始化<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Differential calculus can tell us how to increase or decrease a function’s value by manipulating its arguments. This comes in handy for the optimization problems that we face in deep learning, where we repeatedly update our parameters in order to decrease the loss function.</p>
+<p>初始化参数时需打破神经元的对称性<br/>
+Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播时，保证输入和输出的量级基本相等</p>
 </div>
-<section id="derivatives-and-differentiation">
-<h2>Derivatives and Differentiation<a class="headerlink" href="#derivatives-and-differentiation" title="Permalink to this headline">#</a></h2>
-<p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function $f:\mathbb{R}\to\mathbb{R}$</p>
-<p>$$f’(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$</p>
-<p>When $f’(x)$ exits, $f$ is said to be differentiable at $x$.</p>
-<p>Suppose that $y=f(g(x))$ and that the underlying functions $y=f(u)$ and $u=g(x)$ are both differentiable. The chain rule states that</p>
-<p>$$\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}.$$</p>
-</section>
-<section id="partial-derivatives">
-<h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this headline">#</a></h2>
-<p>Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The partial derivative of $y$ with respect to $x_{i}$ is</p>
-<p>$$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$</p>
-<p>We can treat $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ as constants
-and calculate the derivative of $y$ with respect to $x_i$.</p>
-</section>
-<section id="id1">
-<h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>我们使用常用的分子布局符号，即分子 shape 不变分母转置。<br>
-标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：
-$$\mathbf{x} = \left[ x_{1}, x_{2}, \ldots, x_{n} \right]^{T}\in\mathbb{R}^{n\times 1}$$
-$$\frac{\partial{y}}{\partial\mathbf{x}}=\left[
-\frac{\partial y}{\partial x_{1}}, \frac{\partial y}{\partial x_{2}}, \ldots  ,\frac{\partial y}{\partial x_{n}}
-\right]\in\mathbb{R}^{1\times n}$$</p>
-<p>向量（列）关于标量的导数是一个列向量：</p>
-<p>$$\mathbf{y} = \left[ y_{1}, y_{2}, \ldots, y_{m} \right]^{T}\in\mathbb{R}^{m\times 1}$$
-$$\frac{\partial{\mathbf{y}}}{\partial{x}}=\left[
-\frac{\partial y_{1}}{\partial x}, \frac{\partial y_{2}}{\partial x},\ldots ,\frac{\partial y_{m}}{\partial x}
-\right]^{T}\in\mathbb{R}^{m\times 1}$$</p>
-<p>向量（列）关于向量（列）的导数是一个矩阵：
-$$\mathbf{x} = \left[ x_{1}, x_{2}, \ldots, x_{n} \right]^{T}\in\mathbb{R}^{n\times 1}$$
-$$\mathbf{y} = \left[ y_{1}, y_{2}, \ldots, y_{m} \right]^{T}\in\mathbb{R}^{m\times 1}$$
-$$\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\left[
-\frac{\partial y_{1}}{\partial \mathbf{x}}, \frac{\partial y_{2}}{\partial \mathbf{x}},\ldots ,\frac{\partial y_{m}}{\partial \mathbf{x}}
-\right]^{T}\in\mathbb{R}^{m\times n}$$</p>
-<p>在这种布局下，链式法则对向量求导也成立。</p>
-</section>
 <section id="id2">
-<h2>常用的求导结果<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>$$\frac{\partial \text{sum}(\mathbf{x})}{\partial \mathbf{x}} = \mathbf{1}^{T}$$
-$$\frac{\partial \left | \mathbf{x} \right | ^{2}}{\partial \mathbf{x}} = 2\mathbf{x}^{T}$$
-$$\frac{\partial \mathbf{x}}{\partial \mathbf{x}} = \mathbf{I}$$
-$$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
-<p>例.（线性回归）假设$\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}$，损失函数$z=\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2} $，求$\frac{\partial{z}}{\partial{\mathbf{w}}}$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-\frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\\
-&amp;= 2(\mathbf{X}\mathbf{w}-\mathbf{y})^{T}\mathbf{X}
-\end{split}
-\end{equation*}\]</div>
+<h2>对称性<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>想象一下，如果我们将层 $l$ 的所有参数初始化为 $\mathbf{W}^{[l]}=c_{l}, \mathbf{b}^{[l]} = d_{l}$ ， 其中 $c_{l},d_{l}$ 为常量，会发生什么情况：</p>
+<p>正向和反向传播时，层 $l$ 的所有神经元都是对称的，也就是说层 $l$ 实际上相当于只有一个神经元。</p>
 </section>
-<section id="id3">
-<h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>类似地，我们可以把导数扩展到矩阵：</p>
-<p><img alt="image" src="../_images/diff.jpg" /></p>
+<section id="xavier">
+<h2>Xavier 初始化<a class="headerlink" href="#xavier" title="Permalink to this headline">#</a></h2>
+<p>考虑一个没有 bias term 和激活函数的全连接层：</p>
+<p>$$o_{i} = \sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j}$$</p>
+<p>假设 $w_{ij}$ 的均值为0，方差为 $\sigma^{2}$; $x_{j}$ 的均值为0，方差为 $\gamma^{2}$; $w_{ij}, x_{j}$ 相互独立。那么 $o_{i}$ 的均值显然为0，它的方差为：</p>
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76c3f0d0-af9a-4284-bc45-784d3c17390c">
+<span class="eqno">(3)<a class="headerlink" href="#equation-76c3f0d0-af9a-4284-bc45-784d3c17390c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{split}
+\text{Var}[o_{i}] =&amp; E[o_{i}^{2}] - (E[o_{i}])^{2}\\
+=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}x_{j}^{2}] \\
+=&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}]E[x_{j}^{2}] \\
+=&amp;\text{fan}_{in}\sigma^{2}\gamma^{2}
+\end{split}
+\end{equation}\]</div>
+<p>$$</p>
+<p>为了保证输入和输出的方差不变，需要 $\text{fan}_{in}\sigma^{2}=1$。</p>
+<p>另一方面，在反向传播中, 我们有:</p>
+<p>$$\frac{\partial L}{\partial x_{j}} = \sum_{i=1}^{\text{fan}<em>{out}}w</em>{ij}\frac{\partial L}{\partial o_{i}}$$</p>
+<p>类似地，为了维持梯度的方差，需要 $\text{fan}_{out}\sigma^{2} = 1$。</p>
+<p>若 $\text{fan}<em>{in} \ne \text{fan}</em>{out}$ 上述两式不能同时成立, pytorch的实现里取了折中:</p>
+<p>$$\frac{1}{2}(\text{fan}<em>{in} + \text{fan}</em>{out})\sigma^{2} = 1 \ \text{ or }\ \sigma = \sqrt{\frac{2}{\text{fan}<em>{in} + \text{fan}</em>{out}}}$$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># xavier_normal初始化</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">xavier_normal_</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0332, -0.0838, -0.4253, -0.4172,  0.3161],
+        [ 0.6112, -0.0679,  0.3572,  0.4847, -0.4388],
+        [ 0.4275,  0.0573, -0.3956, -0.2125,  0.7110]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="kaiming">
+<h2>Kaiming 初始化<a class="headerlink" href="#kaiming" title="Permalink to this headline">#</a></h2>
+<p>当激活函数为 $\mbox{ReLU}$ 时:</p>
+<p>$$o_{i} = \mbox{ReLU}(\sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j})$$</p>
+<p>在与Xavier初始化一样的假设下，$o_{i}$的方差为Xavier初始化中$o_{i}$方差的一半（因为有一半为0）:</p>
+<p>$$\text{Var}(o_{i}) = \frac{1}{2}\text{fan}_{in}\sigma^{2}\gamma^{2}$$</p>
+<p>保持正向传播时方差不变需 $\text{fan}<em>{in}\sigma^{2}=2$。保持梯度方差不变需 $\text{fan}</em>{out}\sigma^{2}=2$。pytorch中实现的Kaiming初始化：</p>
+<p>$$\sigma = \sqrt{\frac{2}{\mbox{fan}_{mode}}}$$</p>
+<p>其中 $\text{fan}<em>{mode}$ 为 $\text{fan}</em>{in}$ or $\text{fan}_{out}$.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># nn.Linear默认使用kaiming_uniform_，其中mode=`fan_in`，即优先稳定正向传播</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_in&#39;</span><span class="p">,</span> <span class="n">nonlinearity</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.7250, -1.0235,  0.1649, -0.2647,  0.9801],
+        [ 0.5283,  0.9472,  0.4259,  0.5999, -0.2434],
+        [-0.2071, -0.7180,  0.3021, -0.6649,  0.1248]])
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -616,7 +623,7 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter_prelimilaries"
+            path: "./chapter_mlp"
         },
         predefinedOutput: true
     }
@@ -631,19 +638,12 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="linear-algebra.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="activation.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Linear Algebra</p>
+          <p class="prev-next-title">激活函数</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="autograd.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Automatic Differentiation</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -662,28 +662,18 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-and-differentiation">
-   Derivatives and Differentiation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#partial-derivatives">
-   Partial Derivatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   向量求导
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   常用的求导结果
+   对称性
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   矩阵求导
+  <a class="reference internal nav-link" href="#xavier">
+   Xavier 初始化
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaiming">
+   Kaiming 初始化
   </a>
  </li>
 </ul>
