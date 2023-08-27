@@ -57,6 +57,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_prelimilaries/calculus';</script>
     <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -518,12 +519,13 @@ and calculate the derivative of $y$ with respect to $x_i$.</p>
 <h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>我们使用常用的分子布局符号。<br>
 标量关于<code class="docutils literal notranslate"><span class="pre">列向量</span></code>的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：</p>
-<p>$$
-\begin{bmatrix}
-1 &amp; 2 &amp; 3\
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0a75d731-b4aa-4513-a1ed-86e717d322a5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0a75d731-b4aa-4513-a1ed-86e717d322a5" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+1 &amp; 2 &amp; 3\\
 a &amp; b &amp; c
-\end{bmatrix}
-$$</p>
+\end{bmatrix}\]</div>
+<p>$$</p>
 <p>$$\mathbf{x} = \begin{bmatrix} x_{1} \ x_{2} \ \vdots \ x_{n} \end{bmatrix}$$
 $$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
 \frac{\partial y}{\partial x_{1}}&amp; \frac{\partial y}{\partial x_{2}}&amp; \ldots  &amp;\frac{\partial y}{\partial x_{n}}
@@ -544,14 +546,15 @@ $$\frac{\partial{y}}{\partial\mathbf{x}}=\begin{bmatrix}
 <p>向量对向量求导：</p>
 <p>$$\frac{\partial{\mathbf{x}}}{\partial{\mathbf{x}}}=\mathbf{I},\quad\frac{\partial{\mathbf{A}\mathbf{x}}}{\partial{\mathbf{x}}}=\mathbf{A}$$</p>
 <p>例.（线性回归）假设$\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}$，损失函数$z=\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2} $，求$\frac{\partial{z}}{\partial{\mathbf{w}}}$</p>
-<p>$$
-\begin{equation}
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec8766b2-401a-4f59-804c-1d6b9370ea5a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-ec8766b2-401a-4f59-804c-1d6b9370ea5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{split}
-\frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\
+\frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\\
 &amp;= 2(\mathbf{X}\mathbf{w}-\mathbf{y})^{T}\mathbf{X}
 \end{split}
-\end{equation}
-$$</p>
+\end{equation}\]</div>
+<p>$$</p>
 </section>
 <section id="id3">
 <h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
