@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,9 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/7-initialization';</script>
-    <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="优化算法" href="../chapter_optimization/0.html" />
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -191,6 +201,51 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/4-rmsprop.html">RMSprop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/5-adam.html">Adam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/6-lr-schedule.html">学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_conv/0.html">卷积神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/1-convolution.html">卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/2-padding-stride.html">Padding，Stride，Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/3-pooling.html">Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/4-lenet.html">LeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/5-alexnet.html">AlexNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/6-vgg.html">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/7-googlenet.html">GoogleNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/8-batch-normalization.html">卷积层的批标准化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/9-resnet.html">ResNet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_rnn/0.html">循环神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/01-language-model.html">语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/02-text-preprocessing.html">语言模型数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/03-rnn.html">循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/04-training-language-model.html">训练语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/05-gru.html">GRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/06-lstm.html">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/07-deep-rnn.html">深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/08-bidirectional-rnn.html">双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/09-machine-translation-dataset.html">机器翻译数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/10-encoder-decoder.html">编码器-解码器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/11-train-machine-translation.html">训练机器翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/12-seq2seq.html">序列到序列学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_attention/0.html">注意力机制</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/1-attention.html">注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/2-scoring-functions.html">注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/3-multi-head-attention.html">多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/4-positional-encoding.html">位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/5-positionwise-ffn-addnorm.html">Transformer的其它组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/6-transformer-encoder.html">Transformer Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/7-transformer-decoder.html">Transformer Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/8-transformer.html">Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_nlp/0.html">自然语言处理</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/1-bert.html">BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/2-gpt.html">GPT,GPT2,GPT3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/3-codex.html">CodeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/4-instruct.html">Instruct GPT</a></li>
 </ul>
 </li>
 </ul>
@@ -348,10 +403,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -359,7 +414,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -400,7 +455,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>初始化<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -409,31 +464,34 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
 </div>
 <section id="id2">
 <h2>对称性<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>想象一下，如果我们将层 $l$ 的所有参数初始化为 $\mathbf{W}^{[l]}=c_{l}, \mathbf{b}^{[l]} = d_{l}$ ， 其中 $c_{l},d_{l}$ 为常量，会发生什么情况：</p>
-<p>正向和反向传播时，层 $l$ 的所有神经元都是对称的，也就是说层 $l$ 实际上相当于只有一个神经元。</p>
+<p>想象一下，如果我们将层 <span class="math notranslate nohighlight">\(l\)</span> 的所有参数初始化为 <span class="math notranslate nohighlight">\(\mathbf{W}^{[l]}=c_{l}, \mathbf{b}^{[l]} = d_{l}\)</span> ， 其中 <span class="math notranslate nohighlight">\(c_{l},d_{l}\)</span> 为常量，会发生什么情况：</p>
+<p>正向和反向传播时，层 <span class="math notranslate nohighlight">\(l\)</span> 的所有神经元都是对称的，也就是说层 <span class="math notranslate nohighlight">\(l\)</span> 实际上相当于只有一个神经元。</p>
 </section>
 <section id="xavier">
 <h2>Xavier 初始化<a class="headerlink" href="#xavier" title="Permalink to this heading">#</a></h2>
 <p>考虑一个没有 bias term 和激活函数的全连接层：</p>
-<p>$$o_{i} = \sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j}$$</p>
-<p>假设 $w_{ij}$ 的均值为0，方差为 $\sigma^{2}$; $x_{j}$ 的均值为0，方差为 $\gamma^{2}$; $w_{ij}, x_{j}$ 相互独立。那么 $o_{i}$ 的均值显然为0，它的方差为：</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de8d7fc4-ac51-4007-ba76-66f944fc7e92">
-<span class="eqno">(4)<a class="headerlink" href="#equation-de8d7fc4-ac51-4007-ba76-66f944fc7e92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="math notranslate nohighlight">
+\[o_{i} = \sum_{j=1}^{\text{fan}_{in}}w_{ij}x_{j}\]</div>
+<p>假设 <span class="math notranslate nohighlight">\(w_{ij}\)</span> 的均值为0，方差为 <span class="math notranslate nohighlight">\(\sigma^{2}\)</span>; <span class="math notranslate nohighlight">\(x_{j}\)</span> 的均值为0，方差为 <span class="math notranslate nohighlight">\(\gamma^{2}\)</span>; <span class="math notranslate nohighlight">\(w_{ij}, x_{j}\)</span> 相互独立。那么 <span class="math notranslate nohighlight">\(o_{i}\)</span> 的均值显然为0，它的方差为：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
 \begin{split}
 \text{Var}[o_{i}] =&amp; E[o_{i}^{2}] - (E[o_{i}])^{2}\\
 =&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}x_{j}^{2}] \\
 =&amp;\sum_{j=1}^{\text{fan}_{in}}E[w_{ij}^{2}]E[x_{j}^{2}] \\
 =&amp;\text{fan}_{in}\sigma^{2}\gamma^{2}
 \end{split}
-\end{equation}\]</div>
-<p>$$</p>
-<p>为了保证输入和输出的方差不变，需要 $\text{fan}_{in}\sigma^{2}=1$。</p>
+\end{equation}
+\end{split}\]</div>
+<p>为了保证输入和输出的方差不变，需要 <span class="math notranslate nohighlight">\(\text{fan}_{in}\sigma^{2}=1\)</span>。</p>
 <p>另一方面，在反向传播中, 我们有:</p>
-<p>$$\frac{\partial L}{\partial x_{j}} = \sum_{i=1}^{\text{fan}<em>{out}}w</em>{ij}\frac{\partial L}{\partial o_{i}}$$</p>
-<p>类似地，为了维持梯度的方差，需要 $\text{fan}_{out}\sigma^{2} = 1$。</p>
-<p>若 $\text{fan}<em>{in} \ne \text{fan}</em>{out}$ 上述两式不能同时成立, pytorch的实现里取了折中:</p>
-<p>$$\frac{1}{2}(\text{fan}<em>{in} + \text{fan}</em>{out})\sigma^{2} = 1 \ \text{ or }\ \sigma = \sqrt{\frac{2}{\text{fan}<em>{in} + \text{fan}</em>{out}}}$$</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial x_{j}} = \sum_{i=1}^{\text{fan}_{out}}w_{ij}\frac{\partial L}{\partial o_{i}}\]</div>
+<p>类似地，为了维持梯度的方差，需要 <span class="math notranslate nohighlight">\(\text{fan}_{out}\sigma^{2} = 1\)</span>。</p>
+<p>若 <span class="math notranslate nohighlight">\(\text{fan}_{in} \ne \text{fan}_{out}\)</span> 上述两式不能同时成立, pytorch的实现里取了折中:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}(\text{fan}_{in} + \text{fan}_{out})\sigma^{2} = 1 \ \text{ or }\ \sigma = \sqrt{\frac{2}{\text{fan}_{in} + \text{fan}_{out}}}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -456,13 +514,16 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
 </section>
 <section id="kaiming">
 <h2>Kaiming 初始化<a class="headerlink" href="#kaiming" title="Permalink to this heading">#</a></h2>
-<p>当激活函数为 $\mbox{ReLU}$ 时:</p>
-<p>$$o_{i} = \mbox{ReLU}(\sum_{j=1}^{\text{fan}<em>{in}}w</em>{ij}x_{j})$$</p>
-<p>在与Xavier初始化一样的假设下，$o_{i}$的方差为Xavier初始化中$o_{i}$方差的一半（因为有一半为0）:</p>
-<p>$$\text{Var}(o_{i}) = \frac{1}{2}\text{fan}_{in}\sigma^{2}\gamma^{2}$$</p>
-<p>保持正向传播时方差不变需 $\text{fan}<em>{in}\sigma^{2}=2$。保持梯度方差不变需 $\text{fan}</em>{out}\sigma^{2}=2$。pytorch中实现的Kaiming初始化：</p>
-<p>$$\sigma = \sqrt{\frac{2}{\mbox{fan}_{mode}}}$$</p>
-<p>其中 $\text{fan}<em>{mode}$ 为 $\text{fan}</em>{in}$ or $\text{fan}_{out}$.</p>
+<p>当激活函数为 <span class="math notranslate nohighlight">\(\mbox{ReLU}\)</span> 时:</p>
+<div class="math notranslate nohighlight">
+\[o_{i} = \mbox{ReLU}(\sum_{j=1}^{\text{fan}_{in}}w_{ij}x_{j})\]</div>
+<p>在与Xavier初始化一样的假设下，<span class="math notranslate nohighlight">\(o_{i}\)</span>的方差为Xavier初始化中<span class="math notranslate nohighlight">\(o_{i}\)</span>方差的一半（因为有一半为0）:</p>
+<div class="math notranslate nohighlight">
+\[\text{Var}(o_{i}) = \frac{1}{2}\text{fan}_{in}\sigma^{2}\gamma^{2}\]</div>
+<p>保持正向传播时方差不变需 <span class="math notranslate nohighlight">\(\text{fan}_{in}\sigma^{2}=2\)</span>。保持梯度方差不变需 <span class="math notranslate nohighlight">\(\text{fan}_{out}\sigma^{2}=2\)</span>。pytorch中实现的Kaiming初始化：</p>
+<div class="math notranslate nohighlight">
+\[\sigma = \sqrt{\frac{2}{\mbox{fan}_{mode}}}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\text{fan}_{mode}\)</span> 为 <span class="math notranslate nohighlight">\(\text{fan}_{in}\)</span> or <span class="math notranslate nohighlight">\(\text{fan}_{out}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -507,11 +568,10 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="6-activation.html"
@@ -531,10 +591,7 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -566,7 +623,7 @@ Xavier初始化和Kaiming初始化的intuition：在正向传播或反向传播�
   <div class="footer-item">
     
 <p class="component-author">
-By newfacade
+By Newfacade
 </p>
 
   </div>
@@ -599,8 +656,8 @@ By newfacade
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

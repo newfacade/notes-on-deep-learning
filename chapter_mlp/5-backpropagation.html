@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,9 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/5-backpropagation';</script>
-    <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="激活函数" href="6-activation.html" />
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -191,6 +201,51 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/4-rmsprop.html">RMSprop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/5-adam.html">Adam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/6-lr-schedule.html">学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_conv/0.html">卷积神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/1-convolution.html">卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/2-padding-stride.html">Padding，Stride，Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/3-pooling.html">Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/4-lenet.html">LeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/5-alexnet.html">AlexNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/6-vgg.html">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/7-googlenet.html">GoogleNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/8-batch-normalization.html">卷积层的批标准化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/9-resnet.html">ResNet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_rnn/0.html">循环神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/01-language-model.html">语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/02-text-preprocessing.html">语言模型数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/03-rnn.html">循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/04-training-language-model.html">训练语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/05-gru.html">GRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/06-lstm.html">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/07-deep-rnn.html">深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/08-bidirectional-rnn.html">双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/09-machine-translation-dataset.html">机器翻译数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/10-encoder-decoder.html">编码器-解码器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/11-train-machine-translation.html">训练机器翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/12-seq2seq.html">序列到序列学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_attention/0.html">注意力机制</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/1-attention.html">注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/2-scoring-functions.html">注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/3-multi-head-attention.html">多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/4-positional-encoding.html">位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/5-positionwise-ffn-addnorm.html">Transformer的其它组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/6-transformer-encoder.html">Transformer Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/7-transformer-decoder.html">Transformer Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/8-transformer.html">Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_nlp/0.html">自然语言处理</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/1-bert.html">BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/2-gpt.html">GPT,GPT2,GPT3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/3-codex.html">CodeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/4-instruct.html">Instruct GPT</a></li>
 </ul>
 </li>
 </ul>
@@ -348,10 +403,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -359,7 +414,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -400,7 +455,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>反向传播<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -411,89 +466,103 @@ document.write(`
 <h2>正向传播<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>搭建神经网络就像是搭乐高积木:</p>
 <p><img alt="jupyter" src="../_images/mlp.svg" /></p>
-<p>我们用中括号标识层，比如说在上图中， $[0]$ 标识输入层, $[1]$ 标识隐藏层, $[2]$ 标识输出层</p>
-<p>$\mathbf{a}^{[l]}$ 表示 $l$ 层的输出, 并令 $\mathbf{a}^{[0]} = x$</p>
-<p>$\mathbf{z}^{[l]}$ 表示 $l$ 层的仿射结果</p>
-<p>$g^{[l]}$ 表示 $l$ 层的激活函数</p>
+<p>我们用中括号标识层，比如说在上图中， <span class="math notranslate nohighlight">\([0]\)</span> 标识输入层, <span class="math notranslate nohighlight">\([1]\)</span> 标识隐藏层, <span class="math notranslate nohighlight">\([2]\)</span> 标识输出层</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{a}^{[l]}\)</span> 表示 <span class="math notranslate nohighlight">\(l\)</span> 层的输出, 并令 <span class="math notranslate nohighlight">\(\mathbf{a}^{[0]} = x\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{z}^{[l]}\)</span> 表示 <span class="math notranslate nohighlight">\(l\)</span> 层的仿射结果</p>
+<p><span class="math notranslate nohighlight">\(g^{[l]}\)</span> 表示 <span class="math notranslate nohighlight">\(l\)</span> 层的激活函数</p>
 <p>正向传播即:</p>
-<p>$$\mathbf{z}^{[l]} = \mathbf{W}^{[l]}\mathbf{a}^{[l-1]} + \mathbf{b}^{[l]}$$</p>
-<p>$$\mathbf{a}^{[l]} = g^{[l]}(\mathbf{z}^{[l]})$$</p>
-<p>其中 $\mathbf{W}^{[l]} \in \mathbb{R}^{d[l] \times d[l-1]}$, $\mathbf{b}^{[l]} \in \mathbb{R}^{d[l]}$.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}^{[l]} = \mathbf{W}^{[l]}\mathbf{a}^{[l-1]} + \mathbf{b}^{[l]}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{a}^{[l]} = g^{[l]}(\mathbf{z}^{[l]})\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\mathbf{W}^{[l]} \in \mathbb{R}^{d[l] \times d[l-1]}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}^{[l]} \in \mathbb{R}^{d[l]}\)</span>.</p>
 </section>
 <section id="id3">
 <h2>预备知识<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>1.假设在正向传播中 $\mathbf{x} \to \mathbf{y} \to L$, 其中 $L \in \mathbb{R}$是损失， $\mathbf{x} \in \mathbb{R}^{n}$, $\mathbf{y} \in \mathbb{R} ^{m}$ 比 $\mathbf{x}$ 更靠近输出层:</p>
-<p>$$
+<p>1.假设在正向传播中 <span class="math notranslate nohighlight">\(\mathbf{x} \to \mathbf{y} \to L\)</span>, 其中 <span class="math notranslate nohighlight">\(L \in \mathbb{R}\)</span>是损失， <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^{n}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R} ^{m}\)</span> 比 <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> 更靠近输出层:</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{\partial L}{\partial \mathbf{y}} = \begin{bmatrix}
-\frac{\partial L}{\partial y_{1}},
-…,
-\frac{\partial L}{\partial y_{m}}
-\end{bmatrix}
-$$
-$$
-\frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
-\frac{\partial L}{\partial x_{1}},
-…,
-\frac{\partial L}{\partial x_{n}}
-\end{bmatrix}
-$$</p>
-<p>注意标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>，使用全微分公式:</p>
-<p>$$
-\frac{\partial L}{\partial x_{k}} = \sum_{j=1}^{m}\frac{\partial L}{\partial y_{j}}\frac{\partial y_{j}}{\partial x_{k}}
-$$</p>
-<p>从而我们可以计算 $\frac{\partial L}{\partial \mathbf{x}}$ 和 $\frac{\partial L}{\partial \mathbf{y}}$ 的关系:</p>
-<p>$$
-\frac{\partial L}{\partial \mathbf{x}} =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7572b398-0aa9-4b4b-b267-aa1018a42b08">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7572b398-0aa9-4b4b-b267-aa1018a42b08" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
- \frac{\partial L}{\partial x_{1}},
- ...,
- \frac{\partial L}{\partial x_{n}}
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9a7c3d7f-fad7-49c2-ade1-9e5ef51f6452">
-<span class="eqno">(2)<a class="headerlink" href="#equation-9a7c3d7f-fad7-49c2-ade1-9e5ef51f6452" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
  \frac{\partial L}{\partial y_{1}},
  ...,
  \frac{\partial L}{\partial y_{m}}
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1248765a-c5af-4efc-929a-517fe5b3cf82">
-<span class="eqno">(3)<a class="headerlink" href="#equation-1248765a-c5af-4efc-929a-517fe5b3cf82" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+\end{bmatrix}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial \mathbf{x}} = \begin{bmatrix}
+ \frac{\partial L}{\partial x_{1}},
+ ...,
+ \frac{\partial L}{\partial x_{n}}
+\end{bmatrix}
+\]</div>
+<p>注意标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>，使用全微分公式:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial x_{k}} = \sum_{j=1}^{m}\frac{\partial L}{\partial y_{j}}\frac{\partial y_{j}}{\partial x_{k}}
+\]</div>
+<p>从而我们可以计算 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{x}}\)</span> 和 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{y}}\)</span> 的关系:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial L}{\partial \mathbf{x}} = 
+\begin{bmatrix}
+ \frac{\partial L}{\partial x_{1}},
+ ...,
+ \frac{\partial L}{\partial x_{n}}
+\end{bmatrix} = 
+\begin{bmatrix}
+ \frac{\partial L}{\partial y_{1}},
+ ...,
+ \frac{\partial L}{\partial y_{m}}
+\end{bmatrix} 
+\begin{bmatrix}
  \frac{\partial y_{1}}{\partial x_{1}} &amp; ... &amp; \frac{\partial y_{1}}{\partial x_{n}}\\
  \vdots  &amp; \ddots  &amp; \vdots \\
   \frac{\partial y_{m}}{\partial x_{1}}&amp; .... &amp; \frac{\partial y_{m}}{\partial x_{n}}
-\end{bmatrix}\]</div>
-<p>\frac{\partial L}{\partial \mathbf{y}}\frac{\partial \mathbf{y}}{\partial \mathbf{x}}
-$$</p>
-<p>这里 $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ 是 jacobian 矩阵，这里验证了链式法则对向量求导也有效。</p>
+\end{bmatrix} = 
+\frac{\partial L}{\partial \mathbf{y}}\frac{\partial \mathbf{y}}{\partial \mathbf{x}}
+\end{split}\]</div>
+<p>这里 <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{y}}{\partial \mathbf{x}}\)</span> 是 jacobian 矩阵，这里验证了链式法则对向量求导也有效。</p>
 <p>2.矩阵乘法的 jacobian 矩阵，这很容易验证:</p>
-<p>$$\frac{\partial \mathbf{M}\mathbf{x}}{\partial \mathbf{x}}=\mathbf{M}$$</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \mathbf{M}\mathbf{x}}{\partial \mathbf{x}}=\mathbf{M}\]</div>
 </section>
 <section id="id4">
 <h2>反向传播<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Recall 梯度下降公式:</p>
-<p>$$\mathbf{W}^{[l]} = \mathbf{W}^{[l]} - \alpha\frac{\partial{L}}{\partial{\mathbf{W}^{[l]}}}$$</p>
-<p>$$\mathbf{b}^{[l]} = \mathbf{b}^{[l]} - \alpha\frac{\partial{L}}{\partial{\mathbf{b}^{[l]}}}$$</p>
-<p>我们需要计算 $L$ 对各参数的梯度</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{W}^{[l]} = \mathbf{W}^{[l]} - \alpha\frac{\partial{L}}{\partial{\mathbf{W}^{[l]}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{b}^{[l]} = \mathbf{b}^{[l]} - \alpha\frac{\partial{L}}{\partial{\mathbf{b}^{[l]}}}\]</div>
+<p>我们需要计算 <span class="math notranslate nohighlight">\(L\)</span> 对各参数的梯度</p>
 <p>分三步走:</p>
-<p>1.计算输出层的梯度 $\frac{\partial L}{\partial \mathbf{z}^{[N]}}$ :</p>
-<p>$$
+<p>1.计算输出层的梯度 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{z}^{[N]}}\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{\partial L}{\partial \mathbf{z}^{[N]}} = \frac{\partial L}{\partial \mathbf{a}^{[N]}}\frac{\partial \mathbf{a}^{[N]}}{\partial \mathbf{z}^{[N]}}
-$$</p>
-<p>2.计算隐藏层的梯度 $\frac{\partial L}{\partial \mathbf{z}^{[l]}}, l=N-1,…,1$:</p>
-<p>$$\mathbf{z}^{[l + 1]} = \mathbf{W}^{[l + 1]}\mathbf{a}^{[l]} + \mathbf{b}^{[l + 1]}$$</p>
+\]</div>
+<p>2.计算隐藏层的梯度 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{z}^{[l]}}, l=N-1,...,1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}^{[l + 1]} = \mathbf{W}^{[l + 1]}\mathbf{a}^{[l]} + \mathbf{b}^{[l + 1]}\]</div>
 <p>通过前面的预备知识我们知道:</p>
-<p>$$
+<div class="math notranslate nohighlight">
+\[
 \frac{\partial L}{\partial \mathbf{a}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l+1]}}\frac{\partial \mathbf{z}^{[l+1]}}{\partial \mathbf{a}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l+1]}}\mathbf{W}^{[l+1]}
-$$</p>
-<p>注意到隐藏层的激活函数 $g^{[l]}$ 不会相互依赖，因此:</p>
-<p>$$\frac{\partial L}{\partial \mathbf{z}^{[l]}} = \frac{\partial L}{\partial \mathbf{a}^{[l]}} \odot {g^{[l]}}’(\mathbf{z}^{[l]})$$</p>
+\]</div>
+<p>注意到隐藏层的激活函数 <span class="math notranslate nohighlight">\(g^{[l]}\)</span> 不会相互依赖，因此:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial \mathbf{z}^{[l]}} = \frac{\partial L}{\partial \mathbf{a}^{[l]}} \odot {g^{[l]}}'(\mathbf{z}^{[l]})\]</div>
 <p>结合起来:</p>
-<p>$$\frac{\partial L}{\partial \mathbf{z}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l+1]}}\mathbf{W}^{[l+1]} \odot {g^{[l]}}’(\mathbf{z}^{[l]})$$</p>
-<p>3.计算参数的梯度 $\frac{\partial L}{\partial \mathbf{W}^{[l]}}$ 和 $\frac{\partial L}{\partial \mathbf{b}^{[l]}}$ for $l=N,…,1$:</p>
-<p>$$\mathbf{z}^{[l]} = \mathbf{W}^{[l]}\mathbf{a}^{[l - 1]} + \mathbf{b}^{[l]}$$</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial \mathbf{z}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l+1]}}\mathbf{W}^{[l+1]} \odot {g^{[l]}}'(\mathbf{z}^{[l]})\]</div>
+<p>3.计算参数的梯度 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{W}^{[l]}}\)</span> 和 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{b}^{[l]}}\)</span> for <span class="math notranslate nohighlight">\(l=N,...,1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}^{[l]} = \mathbf{W}^{[l]}\mathbf{a}^{[l - 1]} + \mathbf{b}^{[l]}\]</div>
 <p>通过链式法则可以得到:</p>
-<p>$$\frac{\partial L}{\partial \mathbf{W}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l]}}\frac{\partial \mathbf{z}^{[l]}}{\partial \mathbf{W}^{[l]}}$$</p>
-<p>$$\frac{\partial L}{\partial \mathbf{b}^{[l]}}=\frac{\partial L}{\partial \mathbf{z}^{[l]}}$$</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial \mathbf{W}^{[l]}} = \frac{\partial L}{\partial \mathbf{z}^{[l]}}\frac{\partial \mathbf{z}^{[l]}}{\partial \mathbf{W}^{[l]}}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial \mathbf{b}^{[l]}}=\frac{\partial L}{\partial \mathbf{z}^{[l]}}\]</div>
 </section>
 </section>
 
@@ -522,11 +591,10 @@ $$</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="4-batch-normalization.html"
@@ -546,10 +614,7 @@ $$</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -581,7 +646,7 @@ $$</p>
   <div class="footer-item">
     
 <p class="component-author">
-By newfacade
+By Newfacade
 </p>
 
   </div>
@@ -614,8 +679,8 @@ By newfacade
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

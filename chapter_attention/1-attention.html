@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>注意力 &#8212; Notes on Deep Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_attention/1-attention';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="注意力评分函数" href="2-scoring-functions.html" />
+    <link rel="prev" title="注意力机制" href="0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/faruzan.webp" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/faruzan.webp" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_prelimilaries/0.html">Prelimilaries</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/1-tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/2-pandas.html">Data Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/3-linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/4-calculus.html">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_prelimilaries/5-autograd.html">Automatic Differentiation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_linear/0.html">线性神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/1-linear-regression.html">线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/2-fashion-mnist.html">Fashion-MNIST数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/3-training-pipeline.html">训练图像分类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear/4-softmax-regression.html">Softmax回归</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_mlp/0.html">多层感知机</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/1-mlp.html">多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/2-regularization.html">正则化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/3-dropout.html">Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/4-batch-normalization.html">Batch Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/5-backpropagation.html">反向传播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/6-activation.html">激活函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_mlp/7-initialization.html">初始化</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_optimization/0.html">优化算法</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/1-optimization-challenges.html">深度学习中的优化挑战</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/2-gradient-descent.html">梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/3-momentum.html">动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/4-rmsprop.html">RMSprop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/5-adam.html">Adam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/6-lr-schedule.html">学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_conv/0.html">卷积神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/1-convolution.html">卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/2-padding-stride.html">Padding，Stride，Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/3-pooling.html">Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/4-lenet.html">LeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/5-alexnet.html">AlexNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/6-vgg.html">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/7-googlenet.html">GoogleNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/8-batch-normalization.html">卷积层的批标准化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/9-resnet.html">ResNet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_rnn/0.html">循环神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/01-language-model.html">语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/02-text-preprocessing.html">语言模型数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/03-rnn.html">循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/04-training-language-model.html">训练语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/05-gru.html">GRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/06-lstm.html">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/07-deep-rnn.html">深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/08-bidirectional-rnn.html">双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/09-machine-translation-dataset.html">机器翻译数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/10-encoder-decoder.html">编码器-解码器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/11-train-machine-translation.html">训练机器翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/12-seq2seq.html">序列到序列学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0.html">注意力机制</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-scoring-functions.html">注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-multi-head-attention.html">多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-positional-encoding.html">位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-positionwise-ffn-addnorm.html">Transformer的其它组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-transformer-encoder.html">Transformer Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-transformer-decoder.html">Transformer Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-transformer.html">Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_nlp/0.html">自然语言处理</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/1-bert.html">BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/2-gpt.html">GPT,GPT2,GPT3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/3-codex.html">CodeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/4-instruct.html">Instruct GPT</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter_attention/1-attention.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter_attention/1-attention.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>注意力</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bahdanau">Bahdanau注意力</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">查询、键和值</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>注意力<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>注意力在我们的环境中是稀缺的，而环境中信息却不少。<br/>
+在整个人类历史中，那种只将注意力引向感兴趣的一小部分信息的能力，使我们的大脑能够更明智地分配资源来生存、成长和社交。<br/>
+注意力机制希望能模仿人类的这种能力。</p>
+</div>
+<section id="bahdanau">
+<h2>Bahdanau注意力<a class="headerlink" href="#bahdanau" title="Permalink to this heading">#</a></h2>
+<p>在上一章我们探讨了机器翻译问题，在那里我们设计了一个基于两个循环神经网络的编码器-解码器结构，用于序列到序列的学习。</p>
+<p>编码器的RNN将可变长度的序列转化为固定形状的上下文变量 <span class="math notranslate nohighlight">\(\mathbf{h}_{T}\)</span>。在解码器的任意时间步 <span class="math notranslate nohighlight">\(t'\)</span>，它都将作为输入的一部分：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{c}_{t'} = \mathbf{h}_{T}\]</div>
+<p><img alt="" src="../_images/seq2seq_1.svg" /></p>
+<p>但是在解码器的每一个时间步，我们所需要的编码器上下文变量都是不同的，比如”regardent”的输出主要依赖于”watch”的信息。</p>
+<p>假设解码器在时间步<span class="math notranslate nohighlight">\(t'\)</span>本来的输入为<span class="math notranslate nohighlight">\(\mathbf{s}_{t'-1}\)</span>（比如说”IIs”的Embedding），我们挑选能够吸引它注意力的 <span class="math notranslate nohighlight">\(\mathbf{h}_{t}\)</span> 作为当前的编码器上下文：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{c}_{t'} = \sum_{t=1}^{T}\alpha(\mathbf{s}_{t'-1}, \mathbf{h}_{t})\mathbf{h}_{t}\]</div>
+<p>现在 <span class="math notranslate nohighlight">\(\mathbf{c}_{t'}\)</span> 可以说是专为 <span class="math notranslate nohighlight">\(\mathbf{s}_{t'-1}\)</span> 特化的编码器上下文。这就是Bahdanau注意力的思想。</p>
+<p><img alt="" src="../_images/bahdanau.svg" /></p>
+</section>
+<section id="id2">
+<h2>查询、键和值<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>我们再仔细分析Bahdanau注意力的公式，它输出的是一个加权和。</p>
+<p>权重 <span class="math notranslate nohighlight">\(\alpha(\mathbf{s}_{t'-1}, \mathbf{h}_{t})\)</span> 中 <span class="math notranslate nohighlight">\(\mathbf{s}_{t'-1}\)</span> 的功能类似于数据库查询语句，被称为查询（query）。</p>
+<p>查询 <span class="math notranslate nohighlight">\(\mathbf{s}_{t'-1}\)</span> 与各个 <span class="math notranslate nohighlight">\(\mathbf{h}_{t}\)</span> 进行匹配，通过注意力评分函数 <span class="math notranslate nohighlight">\(\alpha\)</span>（下一节会讲）得到权重，这些被匹配的项被称为键（key）。</p>
+<p>每一个键匹配一个值（value），这些值是加权的主体，在Bahdanau注意力中，键和值都是 <span class="math notranslate nohighlight">\(\mathbf{h}_{t}\)</span>。</p>
+<p>我们关注的都是这种有查询、键和值的注意力。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter_attention"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">注意力机制</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2-scoring-functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">注意力评分函数</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bahdanau">Bahdanau注意力</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">查询、键和值</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Newfacade
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

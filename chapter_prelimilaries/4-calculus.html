@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,9 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_prelimilaries/4-calculus';</script>
-    <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Automatic Differentiation" href="5-autograd.html" />
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -191,6 +201,51 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/4-rmsprop.html">RMSprop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/5-adam.html">Adam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/6-lr-schedule.html">学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_conv/0.html">卷积神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/1-convolution.html">卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/2-padding-stride.html">Padding，Stride，Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/3-pooling.html">Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/4-lenet.html">LeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/5-alexnet.html">AlexNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/6-vgg.html">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/7-googlenet.html">GoogleNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/8-batch-normalization.html">卷积层的批标准化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/9-resnet.html">ResNet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_rnn/0.html">循环神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/01-language-model.html">语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/02-text-preprocessing.html">语言模型数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/03-rnn.html">循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/04-training-language-model.html">训练语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/05-gru.html">GRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/06-lstm.html">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/07-deep-rnn.html">深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/08-bidirectional-rnn.html">双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/09-machine-translation-dataset.html">机器翻译数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/10-encoder-decoder.html">编码器-解码器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/11-train-machine-translation.html">训练机器翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/12-seq2seq.html">序列到序列学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_attention/0.html">注意力机制</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/1-attention.html">注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/2-scoring-functions.html">注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/3-multi-head-attention.html">多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/4-positional-encoding.html">位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/5-positionwise-ffn-addnorm.html">Transformer的其它组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/6-transformer-encoder.html">Transformer Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/7-transformer-decoder.html">Transformer Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/8-transformer.html">Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_nlp/0.html">自然语言处理</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/1-bert.html">BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/2-gpt.html">GPT,GPT2,GPT3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/3-codex.html">CodeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/4-instruct.html">Instruct GPT</a></li>
 </ul>
 </li>
 </ul>
@@ -348,10 +403,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -359,7 +414,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -402,7 +457,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="calculus">
+  <section class="tex2jax_ignore mathjax_ignore" id="calculus">
 <h1>Calculus<a class="headerlink" href="#calculus" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -410,52 +465,60 @@ document.write(`
 </div>
 <section id="derivatives-and-differentiation">
 <h2>Derivatives and Differentiation<a class="headerlink" href="#derivatives-and-differentiation" title="Permalink to this heading">#</a></h2>
-<p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function $f:\mathbb{R}\to\mathbb{R}$</p>
-<p>$$f’(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$</p>
-<p>When $f’(x)$ exits, $f$ is said to be differentiable at $x$.</p>
-<p>Suppose that $y=f(g(x))$ and that the underlying functions $y=f(u)$ and $u=g(x)$ are both differentiable. The chain rule states that</p>
-<p>$$\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}.$$</p>
+<p>Put simply, a derivative is the rate of change in a function with respect to changes in its arguments. For function <span class="math notranslate nohighlight">\(f:\mathbb{R}\to\mathbb{R}\)</span></p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.\]</div>
+<p>When <span class="math notranslate nohighlight">\(f'(x)\)</span> exits, <span class="math notranslate nohighlight">\(f\)</span> is said to be differentiable at <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(y=f(g(x))\)</span> and that the underlying functions <span class="math notranslate nohighlight">\(y=f(u)\)</span> and <span class="math notranslate nohighlight">\(u=g(x)\)</span> are both differentiable. The chain rule states that</p>
+<div class="math notranslate nohighlight">
+\[\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}.\]</div>
 </section>
 <section id="partial-derivatives">
 <h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this heading">#</a></h2>
-<p>Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The partial derivative of $y$ with respect to $x_{i}$ is</p>
-<p>$$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$</p>
-<p>We can treat $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ as constants
-and calculate the derivative of $y$ with respect to $x_i$.</p>
+<p>Let <span class="math notranslate nohighlight">\(y = f(x_1, x_2, \ldots, x_n)\)</span> be a function with <span class="math notranslate nohighlight">\(n\)</span> variables. The partial derivative of <span class="math notranslate nohighlight">\(y\)</span> with respect to <span class="math notranslate nohighlight">\(x_{i}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.\]</div>
+<p>We can treat <span class="math notranslate nohighlight">\(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n\)</span> as constants
+and calculate the derivative of <span class="math notranslate nohighlight">\(y\)</span> with respect to <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
 </section>
 <section id="id1">
 <h2>向量求导<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>我们使用常用的分子布局符号，即分子 shape 不变分母转置。<br>
 标量关于向量（列）的导数是一个<code class="docutils literal notranslate"><span class="pre">行向量</span></code>：
-$$\mathbf{x} = \begin{bmatrix}x_{1}\ x_{2}\ \vdots\ x_{n}\end{bmatrix}$$
-$$\frac{\partial{y}}{\partial\mathbf{x}}=\left[
-\frac{\partial y}{\partial x_{1}}, \frac{\partial y}{\partial x_{2}}, \ldots  ,\frac{\partial y}{\partial x_{n}}
-\right]$$</p>
+$<span class="math notranslate nohighlight">\(\mathbf{x} = \begin{bmatrix}x_{1}\\ x_{2}\\ \vdots\\ x_{n}\end{bmatrix}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{\partial{y}}{\partial\mathbf{x}}=\left[
+  \frac{\partial y}{\partial x_{1}}, \frac{\partial y}{\partial x_{2}}, \ldots  ,\frac{\partial y}{\partial x_{n}}
+\right]\)</span>$</p>
 <p>向量（列）关于标量的导数是一个列向量：</p>
-<p>$$\mathbf{y} = \begin{bmatrix} y_{1}\ y_{2}\ \vdots\ y_{m} \end{bmatrix}
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{y} = \begin{bmatrix} y_{1}\\ y_{2}\\ \vdots\\ y_{m} \end{bmatrix}
 \quad
 \frac{\partial{\mathbf{y}}}{\partial{x}}=\begin{bmatrix}
-\frac{\partial y_{1}}{\partial x}\ \frac{\partial y_{2}}{\partial x}\ \vdots \frac{\partial y_{m}}{\partial x}
-\end{bmatrix}$$</p>
+  \frac{\partial y_{1}}{\partial x}\\ \frac{\partial y_{2}}{\partial x}\\ \vdots \\\frac{\partial y_{m}}{\partial x}
+\end{bmatrix}\end{split}\]</div>
 <p>向量（列）关于向量（列）的导数是一个矩阵：
-$$\mathbf{x} =\begin{bmatrix}x_{1}  \x_{2}  \ \vdots  \x_{n}\end{bmatrix}\quad\mathbf{y} =\begin{bmatrix}y_{1}  \y_{2}  \ \vdots  \y_{m}\end{bmatrix}\quad\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\begin{bmatrix}
-\frac{\partial y_{1}}{\partial \mathbf{x}}\ \frac{\partial y_{2}}{\partial \mathbf{x}}\vdots  \frac{\partial y_{m}}{\partial \mathbf{x}}\end{bmatrix} = \begin{bmatrix} \frac{\partial{y_1}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_1}}{\partial{x_n}}  \ \vdots &amp; \ddots &amp; \vdots \ \frac{\partial{y_m}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_m}}{\partial{x_n}} \ \end{bmatrix}$$</p>
+$<span class="math notranslate nohighlight">\(\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix}\quad\mathbf{y} =\begin{bmatrix}y_{1}  \\y_{2}  \\ \vdots  \\y_{m}\end{bmatrix}\quad\frac{\partial{\mathbf{y}}}{\partial\mathbf{x}}=\begin{bmatrix}
+  \frac{\partial y_{1}}{\partial \mathbf{x}}\\ \frac{\partial y_{2}}{\partial \mathbf{x}}\\\vdots  \\\frac{\partial y_{m}}{\partial \mathbf{x}}\end{bmatrix} = \begin{bmatrix} \frac{\partial{y_1}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_1}}{\partial{x_n}}  \\ \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial{y_m}}{\partial{x_1}} &amp; \cdots &amp; \frac{\partial{y_m}}{\partial{x_n}} \\ \end{bmatrix}\)</span>$</p>
 <p>在这种布局下，链式法则对向量求导也成立。</p>
 </section>
 <section id="id2">
 <h2>常用的求导结果<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>$$\frac{\partial \text{sum}(\mathbf{x})}{\partial \mathbf{x}} = \mathbf{1}^{T}$$
-$$\frac{\partial \left | \mathbf{x} \right | ^{2}}{\partial \mathbf{x}} = 2\mathbf{x}^{T}$$
-$$\frac{\partial \mathbf{x}}{\partial \mathbf{x}} = \mathbf{I}$$
-$$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
-<p>例.（线性回归）假设$\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}$，损失函数$z=\left |\mathbf{X}\mathbf{w}-\mathbf{y}  \right |^{2} $，求$\frac{\partial{z}}{\partial{\mathbf{w}}}$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
+<div class="math notranslate nohighlight">
+\[\frac{\partial \text{sum}(\mathbf{x})}{\partial \mathbf{x}} = \mathbf{1}^{T}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \left \| \mathbf{x} \right \| ^{2}}{\partial \mathbf{x}} = 2\mathbf{x}^{T}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \mathbf{x}}{\partial \mathbf{x}} = \mathbf{I}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}\]</div>
+<p>例.（线性回归）假设<span class="math notranslate nohighlight">\(\mathbf{X}\in\mathbb{R}^{m\times{n}}, \mathbf{w}\in\mathbb{R}^{n}, \mathbf{y}\in\mathbb{R}^{m}\)</span>，损失函数<span class="math notranslate nohighlight">\(z=\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2} \)</span>，求<span class="math notranslate nohighlight">\(\frac{\partial{z}}{\partial{\mathbf{w}}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
 \frac{\partial{z}}{\partial{\mathbf{w}}} &amp;= \frac{\partial{\left \|\mathbf{X}\mathbf{w}-\mathbf{y}  \right \|^{2}}}{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}\frac{\partial{\mathbf{X}\mathbf{w}-\mathbf{y}}}{\partial{\mathbf{X}\mathbf{w}}}\frac{\partial{\mathbf{X}\mathbf{w}}}{\partial{\mathbf{w}}}\quad(\mbox{链式法则})\\
 &amp;= 2(\mathbf{X}\mathbf{w}-\mathbf{y})^{T}\mathbf{X}
-\end{split}
-\end{equation*}\]</div>
+\end{aligned}
+\end{split}\]</div>
 </section>
 <section id="id3">
 <h2>矩阵求导<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
@@ -489,11 +552,10 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3-linear-algebra.html"
@@ -513,10 +575,7 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -550,7 +609,7 @@ $$\frac{\partial A\mathbf{x}}{\partial \mathbf{x}} = \mathbf{A}$$</p>
   <div class="footer-item">
     
 <p class="component-author">
-By newfacade
+By Newfacade
 </p>
 
   </div>
@@ -583,8 +642,8 @@ By newfacade
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,8 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_mlp/4-batch-normalization';</script>
-    <link rel="shortcut icon" href="../_static/github.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="反向传播" href="5-backpropagation.html" />
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -190,6 +201,51 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/4-rmsprop.html">RMSprop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/5-adam.html">Adam</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/6-lr-schedule.html">学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_conv/0.html">卷积神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/1-convolution.html">卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/2-padding-stride.html">Padding，Stride，Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/3-pooling.html">Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/4-lenet.html">LeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/5-alexnet.html">AlexNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/6-vgg.html">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/7-googlenet.html">GoogleNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/8-batch-normalization.html">卷积层的批标准化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_conv/9-resnet.html">ResNet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_rnn/0.html">循环神经网络</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/01-language-model.html">语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/02-text-preprocessing.html">语言模型数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/03-rnn.html">循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/04-training-language-model.html">训练语言模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/05-gru.html">GRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/06-lstm.html">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/07-deep-rnn.html">深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/08-bidirectional-rnn.html">双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/09-machine-translation-dataset.html">机器翻译数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/10-encoder-decoder.html">编码器-解码器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/11-train-machine-translation.html">训练机器翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_rnn/12-seq2seq.html">序列到序列学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_attention/0.html">注意力机制</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/1-attention.html">注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/2-scoring-functions.html">注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/3-multi-head-attention.html">多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/4-positional-encoding.html">位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/5-positionwise-ffn-addnorm.html">Transformer的其它组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/6-transformer-encoder.html">Transformer Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/7-transformer-decoder.html">Transformer Decoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention/8-transformer.html">Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter_nlp/0.html">自然语言处理</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/1-bert.html">BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/2-gpt.html">GPT,GPT2,GPT3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/3-codex.html">CodeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_nlp/4-instruct.html">Instruct GPT</a></li>
 </ul>
 </li>
 </ul>
@@ -347,10 +403,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -358,7 +414,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -386,6 +442,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition">Intuition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition2">Intuition2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorchbatch-normalization">Pytorch中的Batch Normalization</a></li>
 </ul>
             </nav>
@@ -398,7 +455,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="batch-normalization">
+  <section class="tex2jax_ignore mathjax_ignore" id="batch-normalization">
 <h1>Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -410,17 +467,32 @@ Batch Normalization可以加速网络收敛，让我们能够训练更深的网�
 <p>回想第一节我们用线性回归预测房价时，第一步是标准化输入特征，类似地，神经网络也需要标准化输入特征，其实不仅是输入层，中间各层也需要标准化</p>
 <p>此外更深层的网络非常复杂容易过拟合，这就有正则的需求</p>
 <p>Batch Normalization其实就是按批进行标准化，再统一拉伸和偏移（有量纲和偏移量灵活度的标准化）：</p>
-<p>$$\mathrm{BN}(\mathbf{x}) = \boldsymbol{\gamma}\odot\frac{\mathbf{x} - \hat{\boldsymbol{\mu}}<em>{\mathcal{B}}}{\hat{\boldsymbol{\sigma}}</em>{\mathcal{B}}} + \boldsymbol{\beta}$$</p>
-<p>其中 $\hat{\boldsymbol{\mu}}<em>{\mathcal{B}}$ 和 $\hat{\boldsymbol{\sigma}}</em>{\mathcal{B}}$ 分别是小批量 $\mathcal{B}$ 的均值和标准差；拉伸参数 $\boldsymbol{\gamma}$ 和偏移参数 $\boldsymbol{\beta}$ 和 $\mathbf{x}$ 的形状相同，是模型需要学习的参数。</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{BN}(\mathbf{x}) = \boldsymbol{\gamma}\odot\frac{\mathbf{x} - \hat{\boldsymbol{\mu}}_{\mathcal{B}}}{\hat{\boldsymbol{\sigma}}_{\mathcal{B}}} + \boldsymbol{\beta}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\mu}}_{\mathcal{B}}\)</span> 和 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\sigma}}_{\mathcal{B}}\)</span> 分别是小批量 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> 的均值和标准差；拉伸参数 <span class="math notranslate nohighlight">\(\boldsymbol{\gamma}\)</span> 和偏移参数 <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span> 和 <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> 的形状相同，是模型需要学习的参数。</p>
 <p>均值和标准差的计算公式如下：</p>
-<p>$$\hat{\boldsymbol{\mu}}<em>{\mathcal{B}} = \frac{1}{|\mathcal{B}|}\sum</em>{x\in{\mathcal{B}}}\mathbf{x}$$</p>
-<p>$$\hat{\boldsymbol{\sigma}}<em>{\mathcal{B}}^{2} = \frac{1}{|\mathcal{B}|}\sum</em>{x\in{\mathcal{B}}}(\mathbf{x} - \hat{\boldsymbol{\mu}}_{\mathcal{B}})^{2} + \boldsymbol{\epsilon}$$</p>
+<div class="math notranslate nohighlight">
+\[\hat{\boldsymbol{\mu}}_{\mathcal{B}} = \frac{1}{|\mathcal{B}|}\sum_{x\in{\mathcal{B}}}\mathbf{x}\]</div>
+<div class="math notranslate nohighlight">
+\[\hat{\boldsymbol{\sigma}}_{\mathcal{B}}^{2} = \frac{1}{|\mathcal{B}|}\sum_{x\in{\mathcal{B}}}(\mathbf{x} - \hat{\boldsymbol{\mu}}_{\mathcal{B}})^{2} + \boldsymbol{\epsilon}\]</div>
+</section>
+<section id="intuition2">
+<h2>Intuition2<a class="headerlink" href="#intuition2" title="Permalink to this heading">#</a></h2>
+<p>深度神经网络中，顶部的层因为梯度较大更新较快，底部的层因为梯度消失更新较慢。所以训练时，顶部的层一般会很快收敛，但是底部的层收敛很慢。</p>
+<p>这里就有一个问题了，顶部的层依赖于底部的层，所以底部的参数一变化，顶部就算之前已经收敛还得重新训练，然后顶部的参数变化也会在反向传播时影响底部，这样来来回回训练不好。</p>
+<p>固定小批量里的均值和方差。</p>
+<ul class="simple">
+<li><p>对于全连接层，作用在特征维</p></li>
+<li><p>对于卷积层，作用在通道维（相当于1乘1卷积的特征维）</p></li>
+</ul>
+<p>每个小批量里加入噪音来控制模型复杂度。</p>
 </section>
 <section id="pytorchbatch-normalization">
 <h2>Pytorch中的Batch Normalization<a class="headerlink" href="#pytorchbatch-normalization" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 
 <span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
     <span class="c1"># BN一般在全连接层之后，激活函数之前，需指定输入的维度</span>
@@ -436,6 +508,145 @@ Batch Normalization可以加速网络收敛，让我们能够训练更深的网�
 <p class="admonition-title">Warning</p>
 <p>Batch Normalization和Dropout一起使用的话 1+1 &lt; 1，所以不要一起使用，二者选其一就行<br/>
 Batch Normalization也有正则的效果，所以一般不和正则化一起使用</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[[-0.7056, -0.4590,  0.6550, -0.8764,  0.1595],
+          [-0.3366,  1.2398,  0.7763, -0.0936, -0.0803],
+          [-0.6050, -1.6816, -0.3381,  1.2039,  0.1787],
+          [ 1.2616,  0.1024, -0.3560,  1.8771, -0.3419]],
+
+         [[-0.0999, -0.5607,  1.3607, -1.6053,  0.8459],
+          [-0.4745, -0.2351,  0.2903, -0.2562, -1.3345],
+          [ 1.0218, -2.7007, -0.1659, -1.6627, -1.1253],
+          [-0.4410,  0.7307, -0.4006, -0.8461, -1.1328]],
+
+         [[ 0.3236, -0.2399, -1.3959,  1.1676, -1.8621],
+          [-0.1137,  0.5725,  0.5061,  0.2277,  0.3814],
+          [-1.3717,  1.3927, -0.4582,  0.6749, -1.3643],
+          [ 0.2869,  1.1865, -0.5557, -1.3239,  0.0709]]],
+
+
+        [[[-1.0764,  0.4783,  0.5798,  0.1085,  1.2515],
+          [ 1.1440, -1.0778, -0.9636,  0.2656,  0.3380],
+          [-0.2073,  1.3440, -0.1970,  1.6990, -1.2503],
+          [-1.0565, -0.5901,  0.8860, -0.0596, -1.2087]],
+
+         [[-1.8812, -1.3341, -0.9922,  0.5816,  0.1440],
+          [ 1.0714, -0.7039, -0.1289, -2.0139,  0.1285],
+          [ 0.5642,  0.4715,  0.5909, -1.2737, -0.1398],
+          [ 1.1680,  0.1156,  0.0612, -0.5378, -0.1655]],
+
+         [[-0.7684,  0.6300, -0.5697, -0.8114,  1.2653],
+          [-1.3524, -0.3176,  1.0327, -1.2614, -0.0778],
+          [-0.3558,  0.0546,  0.3996, -0.1144, -0.2044],
+          [-0.4393,  0.3843,  0.2791,  2.0548, -0.8331]]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[[-0.8553, -0.5760,  0.6854, -1.0486,  0.1244],
+          [-0.4374,  1.3476,  0.8227, -0.1623, -0.1472],
+          [-0.7413, -1.9604, -0.4391,  1.3069,  0.1461],
+          [ 1.3723,  0.0597, -0.4594,  2.0693, -0.4435]],
+
+         [[ 0.2413, -0.2491,  1.7957, -1.3607,  1.2478],
+          [-0.1574,  0.0974,  0.6566,  0.0750, -1.0726],
+          [ 1.4350, -2.5264,  0.1710, -1.4218, -0.8499],
+          [-0.1217,  1.1252, -0.0787, -0.5528, -0.8579]],
+
+         [[ 0.4480, -0.1893, -1.4967,  1.4025, -2.0239],
+          [-0.0466,  0.7294,  0.6543,  0.3396,  0.5134],
+          [-1.4693,  1.6570, -0.4362,  0.8453, -1.4609],
+          [ 0.4065,  1.4239, -0.5465, -1.4152,  0.1622]]],
+
+
+        [[[-1.2751,  0.4853,  0.6003,  0.0665,  1.3609],
+          [ 1.2391, -1.2767, -1.1474,  0.2444,  0.3265],
+          [-0.2910,  1.4656, -0.2793,  1.8676, -1.4720],
+          [-1.2526, -0.7245,  0.9470, -0.1237, -1.4249]],
+
+         [[-1.6543, -1.0721, -0.7083,  0.9666,  0.5009],
+          [ 1.4878, -0.4014,  0.2104, -1.7956,  0.4844],
+          [ 0.9480,  0.8493,  0.9765, -1.0078,  0.1988],
+          [ 1.5906,  0.4707,  0.4127, -0.2247,  0.1714]],
+
+         [[-0.7870,  0.7944, -0.5624, -0.8357,  1.5129],
+          [-1.4475, -0.2772,  1.2499, -1.3446, -0.0060],
+          [-0.3204,  0.1438,  0.5339, -0.0474, -0.1491],
+          [-0.4148,  0.5167,  0.3977,  2.4058, -0.8602]]]],
+       grad_fn=&lt;NativeBatchNormBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 每个通道一个均值和方差</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">unbiased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[[-0.8553, -0.5760,  0.6854, -1.0486,  0.1244],
+          [-0.4374,  1.3476,  0.8227, -0.1623, -0.1472],
+          [-0.7413, -1.9604, -0.4391,  1.3069,  0.1461],
+          [ 1.3723,  0.0597, -0.4594,  2.0693, -0.4435]],
+
+         [[ 0.2413, -0.2491,  1.7957, -1.3607,  1.2478],
+          [-0.1574,  0.0974,  0.6566,  0.0750, -1.0726],
+          [ 1.4351, -2.5264,  0.1710, -1.4218, -0.8499],
+          [-0.1217,  1.1252, -0.0787, -0.5528, -0.8579]],
+
+         [[ 0.4480, -0.1893, -1.4967,  1.4025, -2.0240],
+          [-0.0466,  0.7294,  0.6543,  0.3396,  0.5134],
+          [-1.4693,  1.6570, -0.4362,  0.8453, -1.4610],
+          [ 0.4065,  1.4239, -0.5465, -1.4152,  0.1622]]],
+
+
+        [[[-1.2751,  0.4853,  0.6003,  0.0665,  1.3609],
+          [ 1.2391, -1.2767, -1.1474,  0.2444,  0.3265],
+          [-0.2910,  1.4656, -0.2793,  1.8676, -1.4720],
+          [-1.2526, -0.7245,  0.9470, -0.1237, -1.4249]],
+
+         [[-1.6543, -1.0721, -0.7083,  0.9666,  0.5009],
+          [ 1.4878, -0.4014,  0.2104, -1.7956,  0.4844],
+          [ 0.9480,  0.8493,  0.9765, -1.0078,  0.1988],
+          [ 1.5906,  0.4707,  0.4127, -0.2247,  0.1714]],
+
+         [[-0.7870,  0.7945, -0.5624, -0.8357,  1.5129],
+          [-1.4475, -0.2772,  1.2499, -1.3446, -0.0060],
+          [-0.3204,  0.1438,  0.5339, -0.0474, -0.1491],
+          [-0.4148,  0.5167,  0.3977,  2.4058, -0.8602]]]])
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -465,11 +676,10 @@ Batch Normalization也有正则的效果，所以一般不和正则化一起使�
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3-dropout.html"
@@ -489,10 +699,7 @@ Batch Normalization也有正则的效果，所以一般不和正则化一起使�
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -508,6 +715,7 @@ Batch Normalization也有正则的效果，所以一般不和正则化一起使�
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition">Intuition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition2">Intuition2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorchbatch-normalization">Pytorch中的Batch Normalization</a></li>
 </ul>
   </nav></div>
@@ -523,7 +731,7 @@ Batch Normalization也有正则的效果，所以一般不和正则化一起使�
   <div class="footer-item">
     
 <p class="component-author">
-By newfacade
+By Newfacade
 </p>
 
   </div>
@@ -556,8 +764,8 @@ By newfacade
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>
