@@ -1,0 +1,73 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: chapter_prelimilaries/0
+  sections:
+  - file: chapter_prelimilaries/1-tensor.ipynb
+  - file: chapter_prelimilaries/2-pandas.ipynb
+  - file: chapter_prelimilaries/3-linear-algebra.ipynb
+  - file: chapter_prelimilaries/4-calculus.ipynb
+  - file: chapter_prelimilaries/5-autograd.ipynb
+- file: chapter_linear/0
+  sections:
+  - file: chapter_linear/1-linear-regression.ipynb
+  - file: chapter_linear/2-fashion-mnist.ipynb
+  - file: chapter_linear/3-training-pipeline.ipynb
+  - file: chapter_linear/4-softmax-regression.ipynb
+- file: chapter_mlp/0
+  sections:
+  - file: chapter_mlp/1-mlp.ipynb
+  - file: chapter_mlp/2-regularization.ipynb
+  - file: chapter_mlp/3-dropout.ipynb
+  - file: chapter_mlp/4-batch-normalization.ipynb
+  - file: chapter_mlp/5-backpropagation.ipynb
+  - file: chapter_mlp/6-activation.ipynb
+  - file: chapter_mlp/7-initialization.ipynb
+- file: chapter_optimization/0
+  sections:
+  - file: chapter_optimization/1-optimization-challenges.ipynb
+  - file: chapter_optimization/2-gradient-descent.ipynb
+  - file: chapter_optimization/3-momentum.ipynb
+  - file: chapter_optimization/4-rmsprop.ipynb
+  - file: chapter_optimization/5-adam.ipynb
+  - file: chapter_optimization/6-lr-schedule.ipynb
+- file: chapter_conv/0
+  sections:
+  - file: chapter_conv/1-convolution.ipynb
+  - file: chapter_conv/2-padding-stride.ipynb
+  - file: chapter_conv/3-pooling.ipynb
+  - file: chapter_conv/4-lenet.ipynb
+  - file: chapter_conv/5-alexnet.ipynb
+  - file: chapter_conv/6-vgg.ipynb
+  - file: chapter_conv/7-googlenet.ipynb
+  - file: chapter_conv/8-batch-normalization.ipynb
+  - file: chapter_conv/9-resnet.ipynb
+- file: chapter_rnn/0
+  sections:
+  - file: chapter_rnn/01-language-model.ipynb
+  - file: chapter_rnn/02-text-preprocessing.ipynb
+  - file: chapter_rnn/03-rnn.ipynb
+  - file: chapter_rnn/04-training-language-model.ipynb
+  - file: chapter_rnn/05-gru.ipynb
+  - file: chapter_rnn/06-lstm.ipynb
+  - file: chapter_rnn/07-deep-rnn.ipynb
+  - file: chapter_rnn/08-bidirectional-rnn.ipynb
+  - file: chapter_rnn/09-machine-translation-dataset.ipynb
+  - file: chapter_rnn/10-encoder-decoder.ipynb
+  - file: chapter_rnn/11-train-machine-translation.ipynb
+  - file: chapter_rnn/12-seq2seq.ipynb
+- file: chapter_attention/0
+  sections:
+  - file: chapter_attention/1-attention.ipynb
+  - file: chapter_attention/2-scoring-functions.ipynb
+  - file: chapter_attention/3-multi-head-attention.ipynb
+  - file: chapter_attention/4-positional-encoding.ipynb
+  - file: chapter_attention/5-positionwise-ffn-addnorm.ipynb
+  - file: chapter_attention/6-transformer-encoder.ipynb
+  - file: chapter_attention/7-transformer-decoder.ipynb
+  - file: chapter_attention/8-transformer.ipynb
+
+  
